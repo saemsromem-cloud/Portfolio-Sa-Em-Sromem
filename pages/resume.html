@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Sa Em Sromem</title>
+  <meta name="description"
+    content="Online resume for Sa Em Sromem — first-year IT student, technical skills, projects and career goal." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/dark-mode.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="../index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
+            class="bracket">/&gt;</span></a>
+
+        <div class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+              <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+              <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+            </button>
+            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero container reveal">
+      <p class="eyebrow">résumé</p>
+      <h1>Resume</h1>
+      <p>A quick summary of who I am, what I know, and where I'm headed.</p>
+    </section>
+
+    <section class="section container">
+      <div class="resume-grid">
+
+        <!-- Left column -->
+        <div>
+          <div class="card resume-block reveal">
+            <h3>Profile</h3>
+            <p style="color: var(--color-text); font-weight: 600; font-family: var(--font-display);">Sa Em Sromem</p>
+            <p>First-Year IT Student / Aspiring Web Developer</p>
+          </div>
+
+          <div class="card resume-block reveal">
+            <h3>Education</h3>
+            <p>First-year IT student, currently studying Web Programming.</p>
+          </div>
+
+          <div class="card resume-block reveal">
+            <h3>Technical Skills</h3>
+            <ul class="journey-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Python</li>
+              <li>Git</li>
+              <li>GitHub</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div>
+          <div class="card resume-block reveal">
+            <h3>Projects</h3>
+
+            <div class="resume-project">
+              <h4>IT Awareness Club</h4>
+              <a href="https://it-awareness-club-project.vercel.app/" target="_blank" rel="noopener noreferrer">
+                it-awareness-club-project.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"
+                  aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="resume-project">
+              <h4>Shoes Store Website</h4>
+              <a href="https://shoes-store-website-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
+                shoes-store-website-nine.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"
+                  aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="card resume-block reveal">
+            <h3>Career Goal</h3>
+            <p>
+              I want to become a skilled, dependable web developer. I'm committed to steadily
+              learning modern technologies — starting with JavaScript and eventually backend
+              development and databases — so I can build complete, real-world applications.
+            </p>
+          </div>
+
+          <div class="card resume-cta reveal">
+            <p>Want a downloadable copy?</p>
+
+            <a href="../assets/resume/Sa-Em-Sromem-Resume.pdf" class="btn btn-primary" id="download-resume" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              Download Resume
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
+            class="bracket">/&gt;</span></a>
+        <p>First-Year IT Student &amp; Aspiring Web Developer</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="footer-social">
+        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i
+            class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+        <a href="mailto:saemsromem@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"
+            aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; <span data-current-year></span> Sa Em Sromem. Built while learning, one commit at a
+      time.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

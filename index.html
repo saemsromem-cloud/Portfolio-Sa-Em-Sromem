@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sa Em Sromem — IT Student &amp; Aspiring Web Developer</title>
+  <meta name="description" content="Portfolio of Sa Em Sromem, a first-year IT and Web Programming student from Cambodia learning HTML, CSS, Python, Git and GitHub." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dark-mode.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span class="bracket">/&gt;</span></a>
+
+        <div class="nav-menu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/projects.html">Projects</a></li>
+            <li><a href="pages/resume.html">Resume</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+              <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+              <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+            </button>
+            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow">hello world</p>
+          <h1>Sa Em Sromem</h1>
+          <h2 class="hero-title">First-Year IT Student &amp; Aspiring Web Developer</h2>
+          <p class="hero-text">
+            I'm a first-year IT / Web Programming student from Cambodia, currently building
+            my foundations in HTML, CSS, Python, Git and GitHub. I enjoy turning small ideas
+            into working web pages and I'm on a steady path toward becoming a professional
+            web developer.
+          </p>
+
+          <div class="hero-actions">
+            <a href="pages/projects.html" class="btn btn-primary">
+              <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+              View My Projects
+            </a>
+            <a href="pages/contact.html" class="btn btn-secondary">
+              <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+              Contact Me
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub profile">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:saemsromem@gmail.com" aria-label="Email">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap reveal">
+          <div class="hero-image-frame">
+            <img src="assets/images/profile.jpg" alt="Portrait of Sa Em Sromem" class="hero-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span class="bracket">/&gt;</span></a>
+        <p>First-Year IT Student &amp; Aspiring Web Developer</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/projects.html">Projects</a></li>
+        <li><a href="pages/resume.html">Resume</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+
+      <div class="footer-social">
+        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+        <a href="mailto:saemsromem@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; <span data-current-year></span> Sa Em Sromem. Built while learning, one commit at a time.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

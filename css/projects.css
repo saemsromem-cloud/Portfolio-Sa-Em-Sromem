@@ -1,0 +1,171 @@
+/* ==========================================================================
+   projects.css — Project page specific styles
+
+   Contains: project grid, project cards, project images,
+   project-specific animations, project buttons.
+   ========================================================================== */
+
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+/* Real project screenshot */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-base);
+}
+
+/* Zoom image when hovering */
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   PROJECT IMAGE OVERLAY
+========================= */
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.02),
+      rgba(0, 0, 0, 0.15));
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   PROJECT BODY
+========================= */
+
+.project-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.project-body h3 {
+  font-family: var(--font-display);
+}
+
+.project-body p {
+  font-size: 0.95rem;
+}
+
+
+/* =========================
+   PROJECT TECHNOLOGIES
+========================= */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-block: 0.5rem;
+}
+
+.project-tech span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+
+  padding: 0.3rem 0.6rem;
+
+  border-radius: 999px;
+
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+
+  color: var(--color-primary);
+}
+
+
+/* =========================
+   PROJECT BUTTON
+========================= */
+
+.project-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+
+/* =========================
+   FUTURE PROJECTS NOTE
+========================= */
+
+.projects-note {
+  margin-top: var(--space-xl);
+  text-align: center;
+
+  padding: var(--space-lg);
+
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.projects-note .eyebrow {
+  justify-content: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    aspect-ratio: 16 / 10;
+  }
+}

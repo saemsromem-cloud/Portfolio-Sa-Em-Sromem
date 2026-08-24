@@ -1,0 +1,85 @@
+/* ==========================================================================
+   dark-mode.css — Dark theme overrides
+   Activated when <body> has the class "dark-theme"
+   (toggled and persisted via js/script.js using localStorage)
+   ========================================================================== */
+
+body.dark-theme {
+  --color-bg: #0f172a;
+  --color-bg-alt: #16213a;
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border: #253248;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+body.dark-theme .navbar {
+  background-color: rgba(15, 23, 42, 0.85);
+  border-bottom-color: var(--color-border);
+}
+
+/* Buttons */
+body.dark-theme .btn-secondary {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+body.dark-theme .btn-secondary:hover,
+body.dark-theme .btn-secondary:focus-visible {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Theme toggle icon swap */
+body.dark-theme .theme-toggle .icon-sun {
+  display: none;
+}
+
+body.dark-theme .theme-toggle .icon-moon {
+  display: block;
+}
+
+body.dark-theme .theme-toggle:hover {
+  background-color: var(--color-border);
+}
+
+/* Hero / profile image glow adjustment */
+body.dark-theme .hero-image-frame {
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--color-border);
+}
+
+/* Cards */
+body.dark-theme .card {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border);
+}
+
+/* Form fields */
+body.dark-theme input,
+body.dark-theme textarea {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Footer */
+body.dark-theme .footer {
+  border-top-color: var(--color-border);
+}
+
+body.dark-theme .footer-bottom {
+  border-top-color: var(--color-border);
+}
+
+/* Code-style eyebrow tags stay legible on dark backgrounds */
+body.dark-theme .eyebrow::before {
+  color: var(--color-text-muted);
+}

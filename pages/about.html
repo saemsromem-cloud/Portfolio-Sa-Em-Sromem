@@ -3,960 +3,371 @@
 
 <head>
 
-  <!-- =====================================================
-       BASIC META
-  ====================================================== -->
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>
-    About Me | Sa Em Sromem
-  </title>
-
+  <title>About | Sa Em Sromem</title>
   <meta name="description"
-    content="Learn about Sa Em Sromem, an IT and Web Programming student from Cambodia, his current skills, learning journey, and goals as an aspiring web developer." />
-
-  <meta name="author" content="Sa Em Sromem" />
-
+    content="Sa Em Sromem is a first-year IT and Web Programming student from Cambodia, building his foundation in HTML, CSS, Python, Git and GitHub, one project at a time.">
+  <meta name="author" content="Sa Em Sromem">
   <meta name="keywords"
-    content="Sa Em Sromem, About, IT Student, Web Programming, Web Developer, Cambodia, HTML, CSS, Python, Git, GitHub" />
+    content="Sa Em Sromem, About, IT Student, Web Programming, Web Developer, Cambodia, HTML, CSS, Python, Git, GitHub">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0D2839">
 
-  <meta name="robots" content="index, follow" />
-
-  <meta name="theme-color" content="#0f172a" />
-
-
-  <!-- =====================================================
-       SOCIAL PREVIEW
-  ====================================================== -->
-
-  <meta property="og:title" content="About Sa Em Sromem | IT Student & Aspiring Web Developer" />
-
+  <meta property="og:title" content="About Sa Em Sromem | IT Student & Aspiring Web Developer">
   <meta property="og:description"
-    content="Discover Sa Em Sromem's learning journey, current skills, goals and passion for web development." />
+    content="A first-year IT and Web Programming student in Cambodia, learning in public and building real projects.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="../assets/images/profile.jpg">
 
-  <meta property="og:type" content="profile" />
-
-  <meta property="og:image" content="../assets/images/profile.jpg" />
-
-
-  <!-- =====================================================
-       FONTS
-  ====================================================== -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-  <!-- =====================================================
-       ICONS
-  ====================================================== -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-
-  <!-- =====================================================
-       STYLES
-  ====================================================== -->
-
-  <link rel="stylesheet" href="../css/style.css" />
-
-  <link rel="stylesheet" href="../css/dark-mode.css" />
-
-  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dark-mode.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 
 </head>
 
-
 <body>
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
   <header>
-
     <nav class="navbar" aria-label="Main navigation">
-
       <div class="container">
-
-
-        <!-- Logo -->
-
-        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
-
-          <span class="bracket">
-            &lt;
-          </span>
-
-          SaEm
-
-          <span class="bracket">
-            /&gt;
-          </span>
-
-        </a>
-
-
-        <!-- Navigation -->
-
+        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home"><span
+            class="bracket">&lt;</span>SaEm<span class="bracket">/&gt;</span></a>
         <div class="nav-menu">
-
           <ul class="nav-links">
-
-            <li>
-              <a href="../index.html">
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a href="about.html" class="active" aria-current="page">
-                About
-              </a>
-            </li>
-
-            <li>
-              <a href="projects.html">
-                Projects
-              </a>
-            </li>
-
-            <li>
-              <a href="resume.html">
-                Resume
-              </a>
-            </li>
-
-            <li>
-              <a href="contact.html">
-                Contact
-              </a>
-            </li>
-
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html" class="active" aria-current="page">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
-
-
-          <!-- Navigation Actions -->
-
           <div class="nav-actions">
-
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
-
               <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
-
               <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
-
             </button>
-
-
             <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false">
-
-              <span></span>
-              <span></span>
-              <span></span>
-
+              <span></span><span></span><span></span>
             </button>
-
           </div>
-
         </div>
-
       </div>
-
     </nav>
-
   </header>
 
+  <main class="about-page">
 
-  <!-- =====================================================
-       MAIN
-  ====================================================== -->
-
-  <main>
-
-
-    <!-- =================================================
-         PAGE HERO
-    ================================================== -->
-
-    <section class="page-hero container reveal" aria-labelledby="about-page-title">
-
-      <p class="eyebrow">
-        About Me
-      </p>
-
-      <h1 id="about-page-title">
-        My Journey Into Web Development
-      </h1>
-
-      <p>
-        I'm a first-year IT and Web Programming student
-        learning, building, and growing one project at a time.
-      </p>
-
+    <!-- HERO -->
+    <section class="about-hero container reveal" aria-labelledby="about-page-title">
+      <div class="about-hero-badge"><span class="status-dot"></span><span>Currently learning JavaScript</span></div>
+      <div class="about-hero-content">
+        <p class="eyebrow">About me</p>
+        <h1 id="about-page-title">Building my future, <span class="accent-text">one project at a time.</span></h1>
+        <p class="about-hero-description">First-year IT and Web Programming student, learning how the web actually works
+          by taking things apart, building them again, and writing down what I learn.</p>
+        <div class="about-hero-actions">
+          <a href="projects.html" class="btn btn-primary"><i class="fa-solid fa-code"></i> See my projects</a>
+          <a href="contact.html" class="btn btn-secondary"><i class="fa-regular fa-paper-plane"></i> Get in touch</a>
+        </div>
+      </div>
     </section>
 
-
-    <!-- =================================================
-         INTRODUCTION
-    ================================================== -->
-
+    <!-- INTRO -->
     <section class="section container">
+      <div class="about-intro-grid">
 
-      <div class="two-col">
-
-
-        <!-- About Me -->
-
-        <article class="reveal">
-
-          <p class="eyebrow">
-            Who I Am
-          </p>
-
-          <h2>
-            About Me
-          </h2>
-
-          <p>
-            Hi, I'm <strong>Sa Em Sromem</strong>, a first-year
-            IT and Web Programming student from Cambodia.
-          </p>
-
-          <p>
-            I'm at the beginning of my journey in software
-            development. I enjoy learning how websites work,
-            experimenting with code, and turning what I learn
-            into practical projects.
-          </p>
-
-          <p>
-            Every project gives me an opportunity to improve
-            my technical skills, understand problems more clearly,
-            and become a better developer.
-          </p>
-
+        <article class="about-profile-card card reveal">
+          <div class="profile-card-top">
+            <div class="profile-avatar"><span>SE</span></div>
+            <div>
+              <p class="eyebrow">Who am I?</p>
+              <h2>Sa Em Sromem</h2>
+              <p class="profile-role">IT Student &amp; Aspiring Web Developer</p>
+            </div>
+          </div>
+          <div class="profile-line"></div>
+          <div class="profile-info">
+            <div class="profile-info-item"><i class="fa-solid fa-location-dot"></i>
+              <div><span>Based in</span><strong>Cambodia</strong></div>
+            </div>
+            <div class="profile-info-item"><i class="fa-solid fa-graduation-cap"></i>
+              <div><span>Studying</span><strong>Web Programming</strong></div>
+            </div>
+            <div class="profile-info-item"><i class="fa-solid fa-code"></i>
+              <div><span>Focus</span><strong>Frontend &amp; fundamentals</strong></div>
+            </div>
+          </div>
         </article>
 
-
-        <!-- Journey -->
-
-        <article class="reveal">
-
-          <p class="eyebrow">
-            My Journey
-          </p>
-
-          <h2>
-            Learning Step by Step
-          </h2>
-
-          <p>
-            My current learning journey focuses on building
-            a strong foundation before moving into more advanced
-            development.
-          </p>
-
-
-          <ul class="journey-list">
-
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-
-              HTML &amp; semantic web structure
-            </li>
-
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-
-              CSS &amp; responsive layouts
-            </li>
-
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-
-              Python programming fundamentals
-            </li>
-
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-
-              Git version control
-            </li>
-
-            <li>
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
-
-              GitHub project management
-            </li>
-
-          </ul>
-
+        <article class="about-intro-content reveal">
+          <p class="eyebrow">My story</p>
+          <h2>Just getting started — and keeping a record of it.</h2>
+          <p>Hi, I'm <strong>Sa Em Sromem</strong>, a first-year IT and Web Programming student from Cambodia. This site
+            is both my portfolio and my logbook: every page tracks a stage of what I actually know right now, not where
+            I'd like to pretend I am.</p>
+          <p>I enjoy figuring out how websites are put together, breaking things on purpose to see how they fail, and
+            rebuilding them a bit cleaner each time. Two small projects live on the <a href="projects.html"
+              style="color:var(--blue-strong); text-decoration:underline;">Projects page</a> so far — more are in
+            progress.</p>
+          <p>I don't think good developers are made by knowing everything up front. They're made by staying curious,
+            debugging patiently, and showing up again the next day.</p>
+          <div class="quote-card"><i class="fa-solid fa-quote-left"></i>
+            <p>Learn it. Build it. Break it. Fix it. Repeat.</p>
+          </div>
         </article>
 
       </div>
-
     </section>
 
-
-    <!-- =================================================
-         CURRENT FOCUS
-    ================================================== -->
-
-    <section class="section container">
-
-      <div class="section-header reveal">
-
-        <p class="eyebrow">
-          Current Focus
-        </p>
-
-        <h2>
-          What I'm Working On
-        </h2>
-
-        <p>
-          My current focus is developing practical skills
-          through consistent practice and real projects.
-        </p>
-
-      </div>
-
-
-      <div class="skills-grid">
-
-
-        <!-- Frontend -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-solid fa-code" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Frontend Development
-          </h3>
-
-          <p>
-            Practicing HTML and CSS to create clean,
-            responsive and user-friendly web pages.
-          </p>
-
-          <span class="eyebrow">
-            Learning
-          </span>
-
-        </article>
-
-
-        <!-- Programming -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-brands fa-python" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Programming
-          </h3>
-
-          <p>
-            Developing programming fundamentals with Python
-            and improving logical problem-solving skills.
-          </p>
-
-          <span class="eyebrow">
-            Practicing
-          </span>
-
-        </article>
-
-
-        <!-- Version Control -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Version Control
-          </h3>
-
-          <p>
-            Using Git and GitHub to track changes,
-            manage projects and maintain development history.
-          </p>
-
-          <span class="eyebrow">
-            Practicing
-          </span>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         SKILLS
-    ================================================== -->
-
-    <section class="section container">
-
-      <div class="section-header reveal">
-
-        <p class="eyebrow">
-          My Toolkit
-        </p>
-
-        <h2>
-          Skills &amp; Technologies
-        </h2>
-
-        <p>
-          Technologies I currently use and practice
-          during my learning journey.
-        </p>
-
-      </div>
-
-
-      <div class="skills-grid">
-
-
-        <!-- HTML -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-brands fa-html5" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            HTML5
-          </h3>
-
-          <p>
-            Creating structured and semantic web pages.
-          </p>
-
-        </article>
-
-
-        <!-- CSS -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            CSS3
-          </h3>
-
-          <p>
-            Building responsive layouts and visual designs.
-          </p>
-
-        </article>
-
-
-        <!-- Python -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-brands fa-python" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Python
-          </h3>
-
-          <p>
-            Learning programming logic and problem solving.
-          </p>
-
-        </article>
-
-
-        <!-- Git -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-brands fa-git-alt" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Git
-          </h3>
-
-          <p>
-            Tracking code changes and managing project history.
-          </p>
-
-        </article>
-
-
-        <!-- GitHub -->
-
-        <article class="card skill-card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            GitHub
-          </h3>
-
-          <p>
-            Hosting projects and collaborating with code.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         LEARNING ROADMAP
-    ================================================== -->
-
-    <section class="section container">
-
-      <div class="section-header reveal">
-
-        <p class="eyebrow">
-          My Roadmap
-        </p>
-
-        <h2>
-          Where I'm Going
-        </h2>
-
-        <p>
-          A step-by-step path I'm following as I continue
-          developing my skills.
-        </p>
-
-      </div>
-
-
-      <div class="goals-grid">
-
-
-        <!-- Step 01 -->
-
-        <article class="card goal-card reveal">
-
-          <i class="fa-solid fa-1" aria-hidden="true"></i>
-
-          <div>
-
-            <h3>
-              Strengthen the Fundamentals
-            </h3>
-
-            <p>
-              Improve my understanding of HTML, CSS,
-              Python and programming fundamentals.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Step 02 -->
-
-        <article class="card goal-card reveal">
-
-          <i class="fa-solid fa-2" aria-hidden="true"></i>
-
-          <div>
-
-            <h3>
-              Learn JavaScript
-            </h3>
-
-            <p>
-              Add interactivity and dynamic functionality
-              to my web projects.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Step 03 -->
-
-        <article class="card goal-card reveal">
-
-          <i class="fa-solid fa-3" aria-hidden="true"></i>
-
-          <div>
-
-            <h3>
-              Build Real Projects
-            </h3>
-
-            <p>
-              Apply what I learn by creating useful
-              and practical projects.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Step 04 -->
-
-        <article class="card goal-card reveal">
-
-          <i class="fa-solid fa-4" aria-hidden="true"></i>
-
-          <div>
-
-            <h3>
-              Explore Backend Development
-            </h3>
-
-            <p>
-              Learn how servers, APIs and databases
-              work together with frontend applications.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Step 05 -->
-
-        <article class="card goal-card reveal">
-
-          <i class="fa-solid fa-5" aria-hidden="true"></i>
-
-          <div>
-
-            <h3>
-              Build Full-Stack Skills
-            </h3>
-
-            <p>
-              Combine frontend and backend knowledge
-              to create complete web applications.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Step 06 -->
-
-        <article class="card goal-card reveal">
-
-          <i class="fa-solid fa-6" aria-hidden="true"></i>
-
-          <div>
-
-            <h3>
-              Become a Professional Developer
-            </h3>
-
-            <p>
-              Continue learning, build a strong portfolio,
-              and prepare for professional opportunities.
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         MY PRINCIPLES
-    ================================================== -->
-
-    <section class="section container">
-
-      <div class="section-header reveal">
-
-        <p class="eyebrow">
-          My Mindset
-        </p>
-
-        <h2>
-          How I Learn
-        </h2>
-
-      </div>
-
-
-      <div class="two-col">
-
-
-        <article class="card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Learn by Building
-          </h3>
-
-          <p>
-            I learn best when I can apply a concept
-            by building something practical.
-          </p>
-
-        </article>
-
-
-        <article class="card reveal">
-
-          <div class="skill-icon">
-
-            <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
-
-          </div>
-
-          <h3>
-            Improve Continuously
-          </h3>
-
-          <p>
-            I believe progress comes from consistent
-            practice, feedback and learning from mistakes.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =================================================
-         CTA
-    ================================================== -->
-
-    <section class="section container reveal">
-
-      <div class="card">
-
-        <p class="eyebrow">
-          Let's Connect
-        </p>
-
-        <h2>
-          Interested in my work?
-        </h2>
-
-        <p>
-          Explore my projects or get in touch if you'd
-          like to connect, collaborate or share an idea.
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a href="projects.html" class="btn btn-primary">
-
-            <i class="fa-solid fa-code" aria-hidden="true"></i>
-
-            View Projects
-
-          </a>
-
-
-          <a href="contact.html" class="btn btn-secondary">
-
-            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
-
-            Contact Me
-
-          </a>
-
+    <!-- JOURNEY -->
+    <section class="section about-journey-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">My journey</p>
+          <h2>Learning step by step.</h2>
+          <p>Roughly the order I picked things up in — each stage still gets practiced, not dropped once I move on.</p>
         </div>
 
+        <div class="journey-timeline">
+          <article class="journey-item reveal">
+            <span class="journey-number"></span>
+            <div class="journey-content">
+              <span class="journey-tag">Foundation</span>
+              <h3>HTML &amp; web structure</h3>
+              <p>Structuring pages with semantic HTML so content actually means something to the browser, not just the
+                eye.</p>
+              <div class="journey-tech"><span>HTML5</span></div>
+            </div>
+          </article>
+          <article class="journey-item reveal">
+            <span class="journey-number"></span>
+            <div class="journey-content">
+              <span class="journey-tag">Design</span>
+              <h3>CSS &amp; responsive design</h3>
+              <p>Layouts, spacing, typography, and making the same page hold together on a phone and a desktop.</p>
+              <div class="journey-tech"><span>CSS3</span><span>Responsive</span></div>
+            </div>
+          </article>
+          <article class="journey-item reveal">
+            <span class="journey-number"></span>
+            <div class="journey-content">
+              <span class="journey-tag">Programming</span>
+              <h3>Python fundamentals</h3>
+              <p>Logic, functions, and the habit of breaking a problem down before writing any code for it.</p>
+              <div class="journey-tech"><span>Python</span></div>
+            </div>
+          </article>
+          <article class="journey-item reveal">
+            <span class="journey-number"></span>
+            <div class="journey-content">
+              <span class="journey-tag">Workflow</span>
+              <h3>Git &amp; GitHub</h3>
+              <p>Tracking changes properly, writing commits that explain themselves, and keeping projects recoverable.
+              </p>
+              <div class="journey-tech"><span>Git</span><span>GitHub</span></div>
+            </div>
+          </article>
+          <article class="journey-item journey-item-current reveal">
+            <span class="journey-number"></span>
+            <div class="journey-content">
+              <span class="journey-tag">Current</span>
+              <h3>JavaScript &amp; beyond</h3>
+              <p>Making pages interactive, then following that thread into backend basics and databases.</p>
+              <div class="journey-tech"><span>JavaScript</span><span>Backend</span><span>Database</span></div>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
+    <!-- CURRENT FOCUS -->
+    <section class="section container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Current focus</p>
+        <h2>What I'm working on.</h2>
+        <p>The three things getting most of my hours right now.</p>
+      </div>
+      <div class="focus-grid">
+        <article class="focus-card card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Frontend development</h3>
+          <p>Practicing HTML and CSS until "clean and responsive" is the default, not the exception.</p>
+          <div class="focus-status"><span></span>Learning</div>
+        </article>
+        <article class="focus-card card reveal">
+          <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+          <h3>Programming</h3>
+          <p>Strengthening Python fundamentals and the problem-solving habits underneath them.</p>
+          <div class="focus-status"><span></span>Practicing</div>
+        </article>
+        <article class="focus-card card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <h3>Version control</h3>
+          <p>Using Git and GitHub properly on every project, not just at the end of it.</p>
+          <div class="focus-status"><span></span>Practicing</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section about-skills-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">My toolkit</p>
+          <h2>Technologies I'm using.</h2>
+          <p>What's solid today, and what's still in progress.</p>
+        </div>
+        <div class="tech-stack">
+          <div class="tech-item reveal"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+          <div class="tech-item reveal"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+          <div class="tech-item reveal"><i class="fa-brands fa-python"></i><span>Python</span></div>
+          <div class="tech-item reveal"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+          <div class="tech-item reveal"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+          <div class="tech-item tech-item-learning reveal"><i
+              class="fa-brands fa-js"></i><span>JavaScript</span><small>Learning</small></div>
+          <div class="tech-item tech-item-learning reveal"><i
+              class="fa-solid fa-server"></i><span>Backend</span><small>Learning</small></div>
+          <div class="tech-item tech-item-learning reveal"><i
+              class="fa-solid fa-database"></i><span>Database</span><small>Learning</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="section container">
+      <div class="section-header reveal">
+        <p class="eyebrow">My roadmap</p>
+        <h2>Where I'm going next.</h2>
+        <p>The stages ahead, in the order I plan to tackle them.</p>
+      </div>
+      <div class="roadmap-grid">
+        <article class="roadmap-card card reveal">
+          <div class="roadmap-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3>Strengthen fundamentals</h3>
+          <p>Push HTML, CSS, Python and general programming fundamentals from "working" to "solid."</p>
+        </article>
+        <article class="roadmap-card card reveal">
+          <div class="roadmap-icon"><i class="fa-brands fa-js"></i></div>
+          <h3>Learn JavaScript</h3>
+          <p>Build genuinely interactive interfaces, not just static pages that look finished.</p>
+        </article>
+        <article class="roadmap-card card reveal">
+          <div class="roadmap-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Build real projects</h3>
+          <p>Apply what I learn to things people would actually use, not just tutorials.</p>
+        </article>
+        <article class="roadmap-card card reveal">
+          <div class="roadmap-icon"><i class="fa-solid fa-server"></i></div>
+          <h3>Explore backend</h3>
+          <p>Servers, APIs, and how the frontend and backend actually talk to each other.</p>
+        </article>
+        <article class="roadmap-card card reveal">
+          <div class="roadmap-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Learn databases</h3>
+          <p>How applications store, structure and retrieve information reliably.</p>
+        </article>
+        <article class="roadmap-card roadmap-card-highlight card reveal">
+          <div class="roadmap-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Become a developer</h3>
+          <p>Combine all of it into a portfolio I'd be comfortable putting in front of an employer.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MINDSET -->
+    <section class="section container">
+      <div class="section-header reveal">
+        <p class="eyebrow">My mindset</p>
+        <h2>How I learn.</h2>
+      </div>
+      <div class="mindset-grid">
+        <article class="mindset-card card reveal">
+          <div class="mindset-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <div>
+            <h3>Learn by building</h3>
+            <p>An idea only really teaches me something once I try to make it real.</p>
+          </div>
+        </article>
+        <article class="mindset-card card reveal">
+          <div class="mindset-icon"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <h3>Practice consistently</h3>
+            <p>Small, regular sessions beat the occasional long one — for me, at least.</p>
+          </div>
+        </article>
+        <article class="mindset-card card reveal">
+          <div class="mindset-icon"><i class="fa-solid fa-bug"></i></div>
+          <div>
+            <h3>Learn from mistakes</h3>
+            <p>A bug I understand is worth more than code that happens to work.</p>
+          </div>
+        </article>
+        <article class="mindset-card card reveal">
+          <div class="mindset-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <div>
+            <h3>Keep improving</h3>
+            <p>The goal isn't to arrive — it's to keep the roadmap above moving.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section container reveal">
+      <div class="about-cta">
+        <div class="about-cta-content">
+          <p class="eyebrow">Next step</p>
+          <h2>Let's build something cool.</h2>
+          <p>I'm still learning, but always glad to talk about a project, an opportunity, or just tech in general.</p>
+        </div>
+        <div class="about-cta-actions">
+          <a href="projects.html" class="btn btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> View
+            projects</a>
+          <a href="contact.html" class="btn btn-secondary">Contact me <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
     </section>
 
   </main>
 
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
   <footer class="footer">
-
     <div class="container">
-
-
-      <!-- Footer Brand -->
-
       <div class="footer-brand">
-
-        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
-
-          <span class="bracket">
-            &lt;
-          </span>
-
-          SaEm
-
-          <span class="bracket">
-            /&gt;
-          </span>
-
-        </a>
-
-        <p>
-          First-Year IT Student
-          &amp;
-          Aspiring Web Developer
-        </p>
-
+        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home"><span
+            class="bracket">&lt;</span>SaEm<span class="bracket">/&gt;</span></a>
+        <p>First-year IT student &amp; aspiring web developer, Cambodia.</p>
       </div>
-
-
-      <!-- Footer Navigation -->
-
       <ul class="footer-links">
-
-        <li>
-          <a href="../index.html">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="about.html" aria-current="page">
-            About
-          </a>
-        </li>
-
-        <li>
-          <a href="projects.html">
-            Projects
-          </a>
-        </li>
-
-        <li>
-          <a href="resume.html">
-            Resume
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            Contact
-          </a>
-        </li>
-
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-
-
-      <!-- Social -->
-
-      <div class="footer-social" aria-label="Social media links">
-
-        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-
-        </a>
-
-
-        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-
-          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-
-        </a>
-
-
-        <a href="mailto:saemsromem@gmail.com" aria-label="Email">
-
-          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-
-        </a>
-
+      <div class="footer-social">
+        <div class="footer-social-row">
+          <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i
+              class="fa-brands fa-telegram"></i></a>
+          <a href="mailto:saemsromem@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
       </div>
-
     </div>
-
-
-    <!-- Copyright -->
-
-    <p class="footer-bottom">
-
-      &copy;
-
-      <span data-current-year></span>
-
-      Sa Em Sromem.
-
-      Built while learning,
-      one commit at a time.
-
-    </p>
-
+    <p class="footer-bottom">REV <span data-current-year></span>.01 &middot; STATUS: IN PROGRESS &middot; Sa Em Sromem,
+      built while learning.</p>
   </footer>
 
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
-
   <script src="../js/script.js"></script>
-
 </body>
 
 </html>

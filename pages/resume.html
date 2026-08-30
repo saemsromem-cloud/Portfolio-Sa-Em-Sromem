@@ -2,164 +2,814 @@
 <html lang="en">
 
 <head>
+
+  <!-- =====================================================
+       BASIC META
+  ====================================================== -->
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume — Sa Em Sromem</title>
+
+  <title>
+    Resume | Sa Em Sromem
+  </title>
+
   <meta name="description"
-    content="Online resume for Sa Em Sromem — first-year IT student, technical skills, projects and career goal." />
+    content="Resume of Sa Em Sromem, an IT and Web Programming student with experience learning HTML, CSS, Python, Git and GitHub." />
+
+  <meta name="author" content="Sa Em Sromem" />
+
+  <meta name="keywords"
+    content="Sa Em Sromem, Resume, IT Student, Web Programming, Web Developer, HTML, CSS, Python, Git, GitHub, Cambodia" />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta name="theme-color" content="#0f172a" />
+
+
+  <!-- =====================================================
+       OPEN GRAPH
+  ====================================================== -->
+
+  <meta property="og:title" content="Resume | Sa Em Sromem" />
+
+  <meta property="og:description"
+    content="Learn about Sa Em Sromem's education, technical skills, projects and career goals." />
+
+  <meta property="og:type" content="profile" />
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
+
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
+
+  <!-- =====================================================
+       STYLES
+  ====================================================== -->
+
   <link rel="stylesheet" href="../css/style.css" />
+
   <link rel="stylesheet" href="../css/dark-mode.css" />
+
   <link rel="stylesheet" href="../css/responsive.css" />
+
 </head>
+
 
 <body>
 
+  <!-- =====================================================
+       HEADER / NAVIGATION
+  ====================================================== -->
+
   <header>
-    <nav class="navbar">
+
+    <nav class="navbar" aria-label="Main navigation">
+
       <div class="container">
-        <a href="../index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
-            class="bracket">/&gt;</span></a>
+
+
+        <!-- Logo -->
+
+        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
+
+          <span class="bracket">
+            &lt;
+          </span>
+
+          SaEm
+
+          <span class="bracket">
+            /&gt;
+          </span>
+
+        </a>
+
+
+        <!-- Navigation -->
 
         <div class="nav-menu">
+
           <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resume.html" class="active">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+              <a href="../index.html">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="projects.html">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a href="resume.html" class="active" aria-current="page">
+                Resume
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
+
           </ul>
 
+
+          <!-- Navigation Actions -->
+
           <div class="nav-actions">
+
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+
               <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+
               <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+
             </button>
-            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
-              <span></span><span></span><span></span>
+
+
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
             </button>
+
           </div>
+
         </div>
+
       </div>
+
     </nav>
+
   </header>
 
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
   <main>
-    <section class="page-hero container reveal">
-      <p class="eyebrow">résumé</p>
-      <h1>Resume</h1>
-      <p>A quick summary of who I am, what I know, and where I'm headed.</p>
+
+
+    <!-- =================================================
+         PAGE HERO
+    ================================================== -->
+
+    <section class="page-hero container reveal" aria-labelledby="resume-title">
+
+      <p class="eyebrow">
+        professional profile
+      </p>
+
+      <h1 id="resume-title">
+        Resume
+      </h1>
+
+      <p>
+        A snapshot of my education, technical skills,
+        projects and goals as I grow into a web developer.
+      </p>
+
     </section>
+
+
+    <!-- =================================================
+         RESUME CONTENT
+    ================================================== -->
 
     <section class="section container">
+
       <div class="resume-grid">
 
-        <!-- Left column -->
+
+        <!-- =================================================
+             LEFT COLUMN
+        ================================================== -->
+
         <div>
-          <div class="card resume-block reveal">
-            <h3>Profile</h3>
-            <p style="color: var(--color-text); font-weight: 600; font-family: var(--font-display);">Sa Em Sromem</p>
-            <p>First-Year IT Student / Aspiring Web Developer</p>
-          </div>
 
-          <div class="card resume-block reveal">
-            <h3>Education</h3>
-            <p>First-year IT student, currently studying Web Programming.</p>
-          </div>
 
-          <div class="card resume-block reveal">
-            <h3>Technical Skills</h3>
+          <!-- PROFILE -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+
+              <h2>
+                Profile
+              </h2>
+
+            </div>
+
+
+            <h3>
+              Sa Em Sromem
+            </h3>
+
+            <p>
+              IT Student &amp; Aspiring Web Developer
+            </p>
+
+            <p>
+              I am a first-year IT and Web Programming
+              student who enjoys learning how websites work
+              and turning ideas into practical projects.
+            </p>
+
+          </article>
+
+
+          <!-- EDUCATION -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+
+              <h2>
+                Education
+              </h2>
+
+            </div>
+
+
+            <h3>
+              Web Programming
+            </h3>
+
+            <p>
+              First-Year IT Student
+            </p>
+
+            <p>
+              Currently building foundational knowledge
+              in web development, programming and
+              software development practices.
+            </p>
+
+          </article>
+
+
+          <!-- TECHNICAL SKILLS -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+
+              <h2>
+                Technical Skills
+              </h2>
+
+            </div>
+
+
+            <h3>
+              Frontend
+            </h3>
+
             <ul class="journey-list">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Python</li>
-              <li>Git</li>
-              <li>GitHub</li>
+
+              <li>
+                HTML5
+              </li>
+
+              <li>
+                CSS3
+              </li>
+
             </ul>
-          </div>
+
+
+            <h3>
+              Programming
+            </h3>
+
+            <ul class="journey-list">
+
+              <li>
+                Python
+              </li>
+
+            </ul>
+
+
+            <h3>
+              Development Tools
+            </h3>
+
+            <ul class="journey-list">
+
+              <li>
+                Git
+              </li>
+
+              <li>
+                GitHub
+              </li>
+
+            </ul>
+
+          </article>
+
+
+          <!-- CURRENT LEARNING -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+
+              <h2>
+                Currently Learning
+              </h2>
+
+            </div>
+
+
+            <ul class="journey-list">
+
+              <li>
+                JavaScript
+              </li>
+
+              <li>
+                Backend Development
+              </li>
+
+              <li>
+                Databases
+              </li>
+
+              <li>
+                Full-Stack Development
+              </li>
+
+            </ul>
+
+          </article>
+
         </div>
 
-        <!-- Right column -->
+
+        <!-- =================================================
+             RIGHT COLUMN
+        ================================================== -->
+
         <div>
-          <div class="card resume-block reveal">
-            <h3>Projects</h3>
+
+
+          <!-- PROJECTS -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+
+              <h2>
+                Projects
+              </h2>
+
+            </div>
+
+
+            <!-- Project 01 -->
 
             <div class="resume-project">
-              <h4>IT Awareness Club</h4>
+
+              <span class="eyebrow">
+                Project 01
+              </span>
+
+              <h3>
+                IT Awareness Club
+              </h3>
+
+              <p>
+                A student-focused website for sharing
+                IT-related information, activities,
+                events and resources.
+              </p>
+
+
+              <div class="project-tech">
+
+                <span>
+                  HTML
+                </span>
+
+                <span>
+                  CSS
+                </span>
+
+                <span>
+                  JavaScript
+                </span>
+
+              </div>
+
+
               <a href="https://it-awareness-club-project.vercel.app/" target="_blank" rel="noopener noreferrer">
-                it-awareness-club-project.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"
-                  aria-hidden="true"></i>
+
+                View Live Project
+
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+
               </a>
+
             </div>
+
+
+            <!-- Project 02 -->
 
             <div class="resume-project">
-              <h4>Shoes Store Website</h4>
+
+              <span class="eyebrow">
+                Project 02
+              </span>
+
+              <h3>
+                Shoes Store Website
+              </h3>
+
+              <p>
+                A front-end e-commerce style website
+                designed to showcase shoe products through
+                a clean and simple interface.
+              </p>
+
+
+              <div class="project-tech">
+
+                <span>
+                  HTML
+                </span>
+
+                <span>
+                  CSS
+                </span>
+
+                <span>
+                  JavaScript
+                </span>
+
+              </div>
+
+
               <a href="https://shoes-store-website-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
-                shoes-store-website-nine.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"
-                  aria-hidden="true"></i>
+
+                View Live Project
+
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+
               </a>
+
             </div>
-          </div>
 
-          <div class="card resume-block reveal">
-            <h3>Career Goal</h3>
+          </article>
+
+
+          <!-- CAREER GOAL -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+
+              <h2>
+                Career Goal
+              </h2>
+
+            </div>
+
+
             <p>
-              I want to become a skilled, dependable web developer. I'm committed to steadily
-              learning modern technologies — starting with JavaScript and eventually backend
-              development and databases — so I can build complete, real-world applications.
+              My goal is to become a skilled and dependable
+              web developer who can build useful,
+              accessible and well-structured web applications.
             </p>
-          </div>
 
-          <div class="card resume-cta reveal">
-            <p>Want a downloadable copy?</p>
+            <p>
+              I am currently strengthening my foundation
+              in frontend development and programming.
+              My next steps are to improve my JavaScript
+              skills, learn backend development and work
+              with databases.
+            </p>
 
-            <a href="../assets/resume/Sa-Em-Sromem-Resume.pdf" class="btn btn-primary" id="download-resume" download>
+            <p>
+              In the long term, I want to combine these
+              skills to create complete full-stack
+              applications and contribute to real-world
+              projects.
+            </p>
+
+          </article>
+
+
+          <!-- DEVELOPMENT ROADMAP -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-solid fa-road" aria-hidden="true"></i>
+
+              <h2>
+                Development Roadmap
+              </h2>
+
+            </div>
+
+
+            <div class="goals-grid">
+
+
+              <div class="goal-card">
+
+                <i class="fa-brands fa-js" aria-hidden="true"></i>
+
+                <p>
+                  Master JavaScript fundamentals
+                </p>
+
+              </div>
+
+
+              <div class="goal-card">
+
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+
+                <p>
+                  Learn backend development
+                </p>
+
+              </div>
+
+
+              <div class="goal-card">
+
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+
+                <p>
+                  Learn databases
+                </p>
+
+              </div>
+
+
+              <div class="goal-card">
+
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+
+                <p>
+                  Build full-stack applications
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- DOWNLOAD -->
+
+          <article class="card resume-cta reveal">
+
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+
+            <div>
+
+              <p class="eyebrow">
+                Available for download
+              </p>
+
+              <h2>
+                Want a copy of my resume?
+              </h2>
+
+              <p>
+                Download the PDF version for easy
+                sharing and offline viewing.
+              </p>
+
+            </div>
+
+
+            <a href="../assets/resume/Sa-Em-Sromem-Resume.pdf" class="btn btn-primary" id="download-resume" download
+              aria-label="Download Sa Em Sromem resume PDF">
+
               <i class="fa-solid fa-download" aria-hidden="true"></i>
+
               Download Resume
+
             </a>
-          </div>
+
+          </article>
+
+
+          <!-- CONTACT CTA -->
+
+          <article class="card resume-block reveal">
+
+            <div class="resume-heading">
+
+              <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+              <h2>
+                Let's Connect
+              </h2>
+
+            </div>
+
+            <p>
+              Interested in my work, learning journey,
+              or future projects? Feel free to get in touch.
+            </p>
+
+            <a href="contact.html" class="btn btn-secondary">
+
+              Contact Me
+
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+
+            </a>
+
+          </article>
+
         </div>
 
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="footer">
+
     <div class="container">
+
+
+      <!-- Brand -->
+
       <div class="footer-brand">
-        <a href="../index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
-            class="bracket">/&gt;</span></a>
-        <p>First-Year IT Student &amp; Aspiring Web Developer</p>
+
+        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
+
+          <span class="bracket">
+            &lt;
+          </span>
+
+          SaEm
+
+          <span class="bracket">
+            /&gt;
+          </span>
+
+        </a>
+
+        <p>
+          First-Year IT Student
+          &amp;
+          Aspiring Web Developer
+        </p>
+
       </div>
+
+
+      <!-- Footer Links -->
 
       <ul class="footer-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <a href="../index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="projects.html">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="resume.html" aria-current="page">
+            Resume
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
 
-      <div class="footer-social">
-        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-            class="fa-brands fa-github" aria-hidden="true"></i></a>
-        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i
-            class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-        <a href="mailto:saemsromem@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"
-            aria-hidden="true"></i></a>
+
+      <!-- Social -->
+
+      <div class="footer-social" aria-label="Social media links">
+
+        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+
+        </a>
+
+
+        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+
+        </a>
+
+
+        <a href="mailto:saemsromem@gmail.com" aria-label="Email">
+
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
+        </a>
+
       </div>
+
     </div>
-    <p class="footer-bottom">&copy; <span data-current-year></span> Sa Em Sromem. Built while learning, one commit at a
-      time.</p>
+
+
+    <!-- Copyright -->
+
+    <p class="footer-bottom">
+
+      &copy;
+
+      <span data-current-year></span>
+
+      Sa Em Sromem.
+
+      Built while learning,
+      one commit at a time.
+
+    </p>
+
   </footer>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script src="../js/script.js"></script>
+
 </body>
 
 </html>

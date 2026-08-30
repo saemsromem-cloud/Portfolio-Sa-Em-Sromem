@@ -1,171 +1,611 @@
 /* ==========================================================================
-   projects.css — Project page specific styles
-
-   Contains: project grid, project cards, project images,
-   project-specific animations, project buttons.
+   projects.css — Modern Project Page
    ========================================================================== */
 
 
-/* =========================
-   PROJECT GRID
-========================= */
+/* ==========================================================================
+   1. PROJECT GRID
+   ========================================================================== */
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl);
+  align-items: stretch;
 }
 
 
-/* =========================
-   PROJECT CARD
-========================= */
+/* ==========================================================================
+   2. PROJECT CARD
+   ========================================================================== */
 
 .project-card {
-  overflow: hidden;
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  background: var(--color-surface);
+
+  border:
+    1px solid var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    var(--shadow-sm);
+
   transition:
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
+
+
+/* Top accent line */
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(90deg,
+      var(--color-primary),
+      transparent);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.3s ease;
+}
+
+
+/* Hover */
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    var(--shadow-lg);
+
+  border-color:
+    var(--color-primary);
 }
 
 
-/* =========================
-   PROJECT IMAGE
-========================= */
+.project-card:hover::before {
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   3. PROJECT IMAGE
+   ========================================================================== */
 
 .project-image {
   position: relative;
+
   aspect-ratio: 16 / 10;
-  background: var(--color-surface);
+
   overflow: hidden;
+
+  background:
+    var(--color-bg);
 }
 
-/* Real project screenshot */
+
+/* Image */
+
 .project-image img {
   width: 100%;
   height: 100%;
+
   display: block;
+
   object-fit: cover;
   object-position: center;
-  transition: transform var(--transition-base);
+
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
 }
 
-/* Zoom image when hovering */
+
+/* Image hover */
+
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform:
+    scale(1.07);
+
+  filter:
+    brightness(0.9);
 }
 
 
-/* =========================
-   PROJECT IMAGE OVERLAY
-========================= */
+/* ==========================================================================
+   4. IMAGE OVERLAY
+   ========================================================================== */
 
-.project-image::after {
+.project-image::before {
   content: "";
+
   position: absolute;
+
   inset: 0;
 
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.02),
-      rgba(0, 0, 0, 0.15));
+  z-index: 1;
+
+  background:
+    linear-gradient(to bottom,
+      transparent 45%,
+      rgba(0, 0, 0, 0.35));
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease;
 
   pointer-events: none;
 }
 
 
-/* =========================
-   PROJECT BODY
-========================= */
+.project-card:hover .project-image::before {
+  opacity: 1;
+}
+
+
+/* Bottom subtle overlay */
+
+.project-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05),
+      transparent 50%);
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================================
+   5. PROJECT BODY
+   ========================================================================== */
 
 .project-body {
-  padding: var(--space-md);
   display: flex;
+
   flex-direction: column;
-  gap: var(--space-xs);
+
   flex: 1;
+
+  gap: var(--space-sm);
+
+  padding:
+    var(--space-lg);
 }
+
 
 .project-body h3 {
-  font-family: var(--font-display);
+  margin: 0;
+
+  font-family:
+    var(--font-display);
+
+  font-size:
+    1.35rem;
+
+  line-height:
+    1.25;
+
+  color:
+    var(--color-text);
 }
+
 
 .project-body p {
-  font-size: 0.95rem;
+  margin: 0;
+
+  font-size:
+    0.95rem;
+
+  line-height:
+    1.7;
+
+  color:
+    var(--color-text-muted);
 }
 
 
-/* =========================
-   PROJECT TECHNOLOGIES
-========================= */
+/* ==========================================================================
+   6. PROJECT TECHNOLOGIES
+   ========================================================================== */
 
 .project-tech {
   display: flex;
+
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-block: 0.5rem;
+
+  gap:
+    0.5rem;
+
+  margin-top:
+    var(--space-xs);
+
+  margin-bottom:
+    var(--space-sm);
 }
+
 
 .project-tech span {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  display: inline-flex;
 
-  padding: 0.3rem 0.6rem;
+  align-items: center;
 
-  border-radius: 999px;
+  padding:
+    0.4rem 0.7rem;
 
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border-radius:
+    999px;
 
-  color: var(--color-primary);
+  font-family:
+    var(--font-mono);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+
+  color:
+    var(--color-primary);
+
+  background:
+    color-mix(in srgb,
+      var(--color-primary) 8%,
+      var(--color-bg));
+
+  border:
+    1px solid color-mix(in srgb,
+      var(--color-primary) 20%,
+      var(--color-border));
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 
-/* =========================
-   PROJECT BUTTON
-========================= */
+.project-tech span:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    color-mix(in srgb,
+      var(--color-primary) 14%,
+      var(--color-bg));
+
+  border-color:
+    var(--color-primary);
+}
+
+
+/* ==========================================================================
+   7. PROJECT BUTTON
+   ========================================================================== */
 
 .project-card .btn {
-  margin-top: auto;
-  align-self: flex-start;
+  align-self:
+    flex-start;
+
+  margin-top:
+    auto;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.55rem;
 }
 
 
-/* =========================
-   FUTURE PROJECTS NOTE
-========================= */
+/* Arrow animation */
+
+.project-card .btn i {
+  transition:
+    transform 0.25s ease;
+}
+
+
+.project-card .btn:hover i {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* ==========================================================================
+   8. PROJECT NOTE
+   ========================================================================== */
 
 .projects-note {
-  margin-top: var(--space-xl);
-  text-align: center;
+  position: relative;
 
-  padding: var(--space-lg);
+  margin-top:
+    var(--space-2xl);
 
-  border: 1.5px dashed var(--color-border);
-  border-radius: var(--radius-md);
+  padding:
+    var(--space-xl);
+
+  text-align:
+    center;
+
+  border:
+    1px dashed var(--color-border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    var(--color-bg);
+
+  overflow:
+    hidden;
 }
+
+
+/* Decorative glow */
+
+.projects-note::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--color-primary);
+
+  opacity:
+    0.05;
+
+  filter:
+    blur(40px);
+
+  pointer-events:
+    none;
+}
+
 
 .projects-note .eyebrow {
-  justify-content: center;
+  position:
+    relative;
+
+  justify-content:
+    center;
+
+  margin-bottom:
+    var(--space-xs);
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+.projects-note p:last-child {
+  position:
+    relative;
+
+  max-width:
+    600px;
+
+  margin:
+    0 auto;
+
+  line-height:
+    1.7;
+
+  color:
+    var(--color-text-muted);
+}
+
+
+/* ==========================================================================
+   9. FOCUS ACCESSIBILITY
+   ========================================================================== */
+
+.project-card:focus-within {
+  border-color:
+    var(--color-primary);
+
+  box-shadow:
+    0 0 0 4px color-mix(in srgb,
+      var(--color-primary) 12%,
+      transparent);
+}
+
+
+.project-card .btn:focus-visible {
+  outline:
+    3px solid color-mix(in srgb,
+      var(--color-primary) 35%,
+      transparent);
+
+  outline-offset:
+    3px;
+}
+
+
+/* ==========================================================================
+   10. TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  .projects-grid {
+    gap:
+      var(--space-lg);
+  }
+
+
+  .project-body {
+    padding:
+      var(--space-md);
+  }
+
+
+  .project-body h3 {
+    font-size:
+      1.2rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   11. MOBILE
+   ========================================================================== */
 
 @media (max-width: 768px) {
+
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
+
+    gap:
+      var(--space-lg);
   }
 
-  .project-image {
-    aspect-ratio: 16 / 10;
+
+  .project-card:hover {
+    transform:
+      translateY(-4px);
   }
+
+
+  .project-image {
+    aspect-ratio:
+      16 / 10;
+  }
+
+
+  .project-body {
+    padding:
+      var(--space-lg);
+  }
+
+
+  .project-body p {
+    font-size:
+      0.92rem;
+  }
+
+
+  .projects-note {
+    margin-top:
+      var(--space-xl);
+
+    padding:
+      var(--space-lg);
+  }
+
+}
+
+
+/* ==========================================================================
+   12. SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+  .project-body {
+    padding:
+      var(--space-md);
+  }
+
+
+  .project-body h3 {
+    font-size:
+      1.15rem;
+  }
+
+
+  .project-tech span {
+    font-size:
+      0.68rem;
+
+    padding:
+      0.35rem 0.6rem;
+  }
+
+
+  .project-card .btn {
+    width:
+      100%;
+
+    justify-content:
+      center;
+  }
+
+}
+
+
+/* ==========================================================================
+   13. REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-card,
+  .project-card *,
+  .projects-note {
+    transition:
+      none !important;
+
+    animation:
+      none !important;
+  }
+
+
+  .project-card:hover {
+    transform:
+      none;
+  }
+
+
+  .project-card:hover .project-image img {
+    transform:
+      none;
+  }
+
 }

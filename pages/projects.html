@@ -2,159 +2,818 @@
 <html lang="en">
 
 <head>
+
+  <!-- =====================================================
+       BASIC META
+  ====================================================== -->
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Sa Em Sromem</title>
+
+  <title>
+    Projects | Sa Em Sromem
+  </title>
+
   <meta name="description"
-    content="A look at the web development projects built by Sa Em Sromem, a first-year IT and Web Programming student." />
+    content="Explore web development projects built by Sa Em Sromem, an IT and Web Programming student learning frontend development, JavaScript, Git and GitHub." />
+
+  <meta name="author" content="Sa Em Sromem" />
+
+  <meta name="keywords"
+    content="Sa Em Sromem, Web Developer, Web Programming, IT Student, Projects, HTML, CSS, JavaScript, GitHub, Cambodia" />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta name="theme-color" content="#0f172a" />
+
+
+  <!-- =====================================================
+       SOCIAL PREVIEW
+  ====================================================== -->
+
+  <meta property="og:title" content="Projects | Sa Em Sromem" />
+
+  <meta property="og:description" content="Explore projects built by Sa Em Sromem while learning web development." />
+
+  <meta property="og:type" content="website" />
+
+
+  <!-- =====================================================
+       FONTS
+  ====================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
+
+
+  <!-- =====================================================
+       FONT AWESOME
+  ====================================================== -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
+
+  <!-- =====================================================
+       STYLES
+  ====================================================== -->
+
   <link rel="stylesheet" href="../css/style.css" />
+
   <link rel="stylesheet" href="../css/dark-mode.css" />
+
   <link rel="stylesheet" href="../css/responsive.css" />
+
   <link rel="stylesheet" href="../css/projects.css" />
+
 </head>
+
 
 <body>
 
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header>
-    <nav class="navbar">
+
+    <nav class="navbar" aria-label="Main navigation">
+
       <div class="container">
-        <a href="../index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
-            class="bracket">/&gt;</span></a>
+
+
+        <!-- Logo -->
+
+        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
+
+          <span class="bracket">
+            &lt;
+          </span>
+
+          SaEm
+
+          <span class="bracket">
+            /&gt;
+          </span>
+
+        </a>
+
+
+        <!-- Navigation -->
 
         <div class="nav-menu">
+
           <ul class="nav-links">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+              <a href="../index.html">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="projects.html" class="active" aria-current="page">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a href="resume.html">
+                Resume
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
+
           </ul>
 
+
+          <!-- Navigation Actions -->
+
           <div class="nav-actions">
+
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+
               <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+
               <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+
             </button>
-            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
-              <span></span><span></span><span></span>
+
+
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
             </button>
+
           </div>
+
         </div>
+
       </div>
+
     </nav>
+
   </header>
 
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
   <main>
-    <section class="page-hero container reveal">
-      <p class="eyebrow">my work</p>
-      <h1>Projects</h1>
-      <p>A small but growing collection of things I've built while learning to code.</p>
+
+
+    <!-- =================================================
+         PAGE HERO
+    ================================================== -->
+
+    <section class="page-hero container reveal" aria-labelledby="projects-title">
+
+      <p class="eyebrow">
+        My Work
+      </p>
+
+      <h1 id="projects-title">
+        Projects I've Built
+      </h1>
+
+      <p>
+        A growing collection of projects I've created while
+        learning web development and turning ideas into working websites.
+      </p>
+
     </section>
 
-    <section class="section container">
+
+    <!-- =================================================
+         PROJECTS
+    ================================================== -->
+
+    <section class="section container" aria-labelledby="featured-projects-title">
+
+      <div class="section-header reveal">
+
+        <p class="eyebrow">
+          Featured Work
+        </p>
+
+        <h2 id="featured-projects-title">
+          My Projects
+        </h2>
+
+        <p>
+          Each project represents a step in my learning journey
+          and gives me an opportunity to practice real development skills.
+        </p>
+
+      </div>
+
+
       <div class="projects-grid">
 
+
+        <!-- =================================================
+             PROJECT 01
+        ================================================== -->
+
         <article class="card project-card reveal">
+
+
+          <!-- Project Image -->
+
           <div class="project-image">
-            <img src="../assets/images/it-awareness-club.png" alt="IT Awareness Club website screenshot" />
+
+            <img src="../assets/images/it-awareness-club.png" alt="Screenshot of the IT Awareness Club website"
+              loading="lazy" />
+
           </div>
+
+
+          <!-- Project Content -->
 
           <div class="project-body">
-            <h3>IT Awareness Club</h3>
 
-            <p>
-              A club website built to inform and engage students with
-              IT-related news, events and resources.
-            </p>
 
-            <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
+            <div class="project-meta">
+
+              <span class="eyebrow">
+                Project 01
+              </span>
+
+              <span class="project-status">
+                Completed
+              </span>
+
             </div>
 
-            <a href="https://it-awareness-club-project.vercel.app/" target="_blank" rel="noopener noreferrer"
-              class="btn btn-primary">
-              View Project
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
+
+            <h3>
+              IT Awareness Club
+            </h3>
+
+
+            <p>
+              A student-focused website created to present
+              IT-related information, activities, events and resources
+              in an organized and accessible way.
+            </p>
+
+
+            <!-- Technology -->
+
+            <div class="project-tech" aria-label="Technologies used">
+
+              <span>
+                HTML
+              </span>
+
+              <span>
+                CSS
+              </span>
+
+              <span>
+                JavaScript
+              </span>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="project-actions">
+
+              <a href="https://it-awareness-club-project.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary">
+
+                View Live
+
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+
+              </a>
+
+            </div>
+
           </div>
+
         </article>
 
 
+        <!-- =================================================
+             PROJECT 02
+        ================================================== -->
+
         <article class="card project-card reveal">
+
+
+          <!-- Project Image -->
+
           <div class="project-image">
-            <img src="../assets/images/shoes-store.png" alt="Shoes Store website screenshot" />
+
+            <img src="../assets/images/shoes-store.png" alt="Screenshot of the Shoes Store website" loading="lazy" />
+
           </div>
+
+
+          <!-- Project Content -->
 
           <div class="project-body">
-            <h3>Shoes Store Website</h3>
 
-            <p>
-              A front-end e-commerce style layout showcasing shoe
-              products with a clean, browsable design.
-            </p>
 
-            <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
+            <div class="project-meta">
+
+              <span class="eyebrow">
+                Project 02
+              </span>
+
+              <span class="project-status">
+                Completed
+              </span>
+
             </div>
 
-            <a href="https://shoes-store-website-nine.vercel.app/" target="_blank" rel="noopener noreferrer"
-              class="btn btn-primary">
-              View Project
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
+
+            <h3>
+              Shoes Store Website
+            </h3>
+
+
+            <p>
+              A front-end e-commerce style website designed
+              to showcase shoe products through a clean,
+              simple and easy-to-browse interface.
+            </p>
+
+
+            <!-- Technology -->
+
+            <div class="project-tech" aria-label="Technologies used">
+
+              <span>
+                HTML
+              </span>
+
+              <span>
+                CSS
+              </span>
+
+              <span>
+                JavaScript
+              </span>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="project-actions">
+
+              <a href="https://shoes-store-website-nine.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary">
+
+                View Live
+
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+
+              </a>
+
+            </div>
+
           </div>
+
         </article>
 
       </div>
+
+
+      <!-- =================================================
+           PROJECT NOTE
+      ================================================== -->
 
       <div class="projects-note reveal">
-        <p class="eyebrow">coming soon</p>
-        <p>More projects are on the way as I keep learning JavaScript, backend development and databases.</p>
+
+        <div class="skill-icon">
+
+          <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+
+        </div>
+
+        <p class="eyebrow">
+          What's Next
+        </p>
+
+        <h3>
+          More Projects Are Coming
+        </h3>
+
+        <p>
+          I'm continuing to learn JavaScript, backend development
+          and databases. As my skills grow, I'll keep adding new
+          projects to this portfolio.
+        </p>
+
       </div>
+
     </section>
+
+
+    <!-- =================================================
+         WHAT I LEARNED
+    ================================================== -->
+
+    <section class="section container" aria-labelledby="learning-title">
+
+      <div class="section-header reveal">
+
+        <p class="eyebrow">
+          Beyond The Code
+        </p>
+
+        <h2 id="learning-title">
+          What These Projects Taught Me
+        </h2>
+
+        <p>
+          Building projects is not only about writing code.
+          It also helps me develop practical habits as a developer.
+        </p>
+
+      </div>
+
+
+      <div class="skills-grid">
+
+
+        <!-- Structure -->
+
+        <article class="card skill-card reveal">
+
+          <div class="skill-icon">
+
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+
+          </div>
+
+          <h3>
+            Structure
+          </h3>
+
+          <p>
+            Organizing HTML pages into clear sections
+            and meaningful content.
+          </p>
+
+        </article>
+
+
+        <!-- Responsive Design -->
+
+        <article class="card skill-card reveal">
+
+          <div class="skill-icon">
+
+            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+
+          </div>
+
+          <h3>
+            Responsive Design
+          </h3>
+
+          <p>
+            Thinking about how websites should work
+            across different screen sizes.
+          </p>
+
+        </article>
+
+
+        <!-- Problem Solving -->
+
+        <article class="card skill-card reveal">
+
+          <div class="skill-icon">
+
+            <i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i>
+
+          </div>
+
+          <h3>
+            Problem Solving
+          </h3>
+
+          <p>
+            Finding problems in my code and improving
+            my solutions through practice.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         DEVELOPMENT ROADMAP
+    ================================================== -->
+
+    <section class="section container" aria-labelledby="next-projects-title">
+
+      <div class="section-header reveal">
+
+        <p class="eyebrow">
+          Next Chapter
+        </p>
+
+        <h2 id="next-projects-title">
+          What I Want to Build Next
+        </h2>
+
+      </div>
+
+
+      <div class="goals-grid">
+
+
+        <article class="card goal-card reveal">
+
+          <i class="fa-brands fa-js" aria-hidden="true"></i>
+
+          <div>
+
+            <h3>
+              JavaScript Projects
+            </h3>
+
+            <p>
+              Build more interactive websites and
+              strengthen my JavaScript skills.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="card goal-card reveal">
+
+          <i class="fa-solid fa-server" aria-hidden="true"></i>
+
+          <div>
+
+            <h3>
+              Backend Projects
+            </h3>
+
+            <p>
+              Learn how web servers and backend
+              applications work.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="card goal-card reveal">
+
+          <i class="fa-solid fa-database" aria-hidden="true"></i>
+
+          <div>
+
+            <h3>
+              Database Projects
+            </h3>
+
+            <p>
+              Learn how applications store,
+              manage and retrieve information.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="card goal-card reveal">
+
+          <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+
+          <div>
+
+            <h3>
+              Full-Stack Applications
+            </h3>
+
+            <p>
+              Eventually combine frontend, backend
+              and database skills into complete applications.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CTA
+    ================================================== -->
+
+    <section class="section container reveal" aria-labelledby="projects-cta-title">
+
+      <div class="card">
+
+        <p class="eyebrow">
+          Let's Connect
+        </p>
+
+        <h2 id="projects-cta-title">
+          Have a project idea?
+        </h2>
+
+        <p>
+          I'm always interested in learning, building
+          and connecting with other people interested in technology.
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a href="contact.html" class="btn btn-primary">
+
+            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+            Contact Me
+
+          </a>
+
+
+          <a href="about.html" class="btn btn-secondary">
+
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+
+            About Me
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="footer">
+
     <div class="container">
+
+
+      <!-- Brand -->
+
       <div class="footer-brand">
-        <a href="../index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
-            class="bracket">/&gt;</span></a>
-        <p>First-Year IT Student &amp; Aspiring Web Developer</p>
+
+        <a href="../index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
+
+          <span class="bracket">
+            &lt;
+          </span>
+
+          SaEm
+
+          <span class="bracket">
+            /&gt;
+          </span>
+
+        </a>
+
+        <p>
+          First-Year IT Student
+          &amp;
+          Aspiring Web Developer
+        </p>
+
       </div>
+
+
+      <!-- Footer Links -->
 
       <ul class="footer-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <a href="../index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="projects.html" aria-current="page">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="resume.html">
+            Resume
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
 
-      <div class="footer-social">
-        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-            class="fa-brands fa-github" aria-hidden="true"></i></a>
-        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i
-            class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-        <a href="mailto:saemsromem@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"
-            aria-hidden="true"></i></a>
+
+      <!-- Social Links -->
+
+      <div class="footer-social" aria-label="Social media links">
+
+        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+
+        </a>
+
+
+        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+
+        </a>
+
+
+        <a href="mailto:saemsromem@gmail.com" aria-label="Email">
+
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
+        </a>
+
       </div>
+
     </div>
-    <p class="footer-bottom">&copy; <span data-current-year></span> Sa Em Sromem. Built while learning, one commit at a
-      time.</p>
+
+
+    <!-- Copyright -->
+
+    <p class="footer-bottom">
+
+      &copy;
+
+      <span data-current-year></span>
+
+      Sa Em Sromem.
+
+      Built while learning,
+      one commit at a time.
+
+    </p>
+
   </footer>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script src="../js/script.js"></script>
+
 </body>
 
 </html>

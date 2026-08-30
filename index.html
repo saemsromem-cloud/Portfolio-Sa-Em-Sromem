@@ -2,139 +2,606 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sa Em Sromem Portfoliot &amp; Aspiring Web Developer</title>
-  <meta name="description"
-    content="Portfolio of Sa Em Sromem, a first-year IT and Web Programming student from Cambodia learning HTML, CSS, Python, Git and GitHub." />
 
-  <!-- Fonts -->
+  <!-- =========================
+       BASIC META
+  ========================== -->
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description"
+    content="Sa Em Sromem — IT and Web Programming student from Cambodia, building projects with HTML, CSS, Python, Git and GitHub." />
+
+  <meta name="author" content="Sa Em Sromem" />
+
+  <meta name="keywords"
+    content="Sa Em Sromem, Web Programming, IT Student, Web Developer, Portfolio, Cambodia, HTML, CSS, Python, Git, GitHub" />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta name="theme-color" content="#0f172a" />
+
+
+  <!-- =========================
+       SEO / SOCIAL PREVIEW
+  ========================== -->
+
+  <meta property="og:title" content="Sa Em Sromem | Aspiring Web Developer" />
+
+  <meta property="og:description"
+    content="Portfolio of Sa Em Sromem, an IT and Web Programming student from Cambodia." />
+
+  <meta property="og:type" content="website" />
+
+  <meta property="og:image" content="assets/images/profile.jpg" />
+
+
+  <!-- =========================
+       TITLE
+  ========================== -->
+
+  <title>
+    Sa Em Sromem | Aspiring Web Developer
+  </title>
+
+
+  <!-- =========================
+       FONTS
+  ========================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-  <!-- Icons -->
+
+
+  <!-- =========================
+       FONT AWESOME
+  ========================== -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <!-- Styles -->
+
+  <!-- =========================
+       WEBSITE STYLES
+  ========================== -->
+
   <link rel="stylesheet" href="css/style.css" />
+
   <link rel="stylesheet" href="css/dark-mode.css" />
+
   <link rel="stylesheet" href="css/responsive.css" />
+
 </head>
+
 
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
+  <!-- =====================================================
+       HEADER / NAVIGATION
+  ====================================================== -->
+
   <header>
-    <nav class="navbar">
+
+    <nav class="navbar" aria-label="Main navigation">
+
       <div class="container">
-        <a href="index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
-            class="bracket">/&gt;</span></a>
+
+
+        <!-- =========================
+             LOGO
+        ========================== -->
+
+        <a href="index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
+
+          <span class="bracket">
+            &lt;
+          </span>
+
+          SaEm
+
+          <span class="bracket">
+            /&gt;
+          </span>
+
+        </a>
+
+
+        <!-- =========================
+             NAVIGATION
+        ========================== -->
 
         <div class="nav-menu">
+
           <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="pages/about.html">About</a></li>
-            <li><a href="pages/projects.html">Projects</a></li>
-            <li><a href="pages/resume.html">Resume</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
+
+            <li>
+              <a href="index.html" class="active" aria-current="page">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="pages/about.html">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="pages/projects.html">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a href="pages/resume.html">
+                Resume
+              </a>
+            </li>
+
+            <li>
+              <a href="pages/contact.html">
+                Contact
+              </a>
+            </li>
+
           </ul>
 
+
+          <!-- =========================
+               NAV ACTIONS
+          ========================== -->
+
           <div class="nav-actions">
+
+
+            <!-- Theme Toggle -->
+
             <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+
               <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+
               <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+
             </button>
-            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
-              <span></span><span></span><span></span>
+
+
+            <!-- Mobile Menu -->
+
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false">
+
+              <span></span>
+              <span></span>
+              <span></span>
+
             </button>
+
           </div>
+
         </div>
+
       </div>
+
     </nav>
+
   </header>
 
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
   <main>
-    <!-- ================= HERO ================= -->
-    <section class="hero section">
+
+
+    <!-- =================================================
+         HERO SECTION
+    ================================================== -->
+
+    <section class="hero section" aria-labelledby="hero-title">
+
       <div class="container hero-grid">
+
+
+        <!-- =========================
+             HERO CONTENT
+        ========================== -->
+
         <div class="hero-content reveal">
-          <p class="eyebrow">hello world</p>
-          <h1>Sa Em Sromem</h1>
-          <h2 class="hero-title">First-Year IT Student &amp; Aspiring Web Developer</h2>
-          <p class="hero-text">
-            I'm a first-year IT / Web Programming student from Cambodia, currently building
-            my foundations in HTML, CSS, Python, Git and GitHub. I enjoy turning small ideas
-            into working web pages and I'm on a steady path toward becoming a professional
-            web developer.
+
+
+          <p class="eyebrow">
+            Hello, World! 👋
           </p>
 
+
+          <h1 id="hero-title">
+            Sa Em Sromem
+          </h1>
+
+
+          <h2 class="hero-title">
+            First-Year IT Student
+            <span>&amp;</span>
+            Aspiring Web Developer
+          </h2>
+
+
+          <p class="hero-text">
+
+            I'm a first-year IT and Web Programming student from Cambodia,
+            passionate about learning how websites and applications are built.
+
+            I'm currently developing my skills in
+            <strong>HTML, CSS, Python, Git and GitHub</strong>,
+            while turning small ideas into practical projects.
+
+            My goal is to grow into a professional web developer
+            and continue building meaningful digital experiences.
+
+          </p>
+
+
+          <!-- =========================
+               HERO ACTIONS
+          ========================== -->
+
           <div class="hero-actions">
+
+
             <a href="pages/projects.html" class="btn btn-primary">
-              <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+
               View My Projects
+
             </a>
+
+
             <a href="pages/contact.html" class="btn btn-secondary">
+
               <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
               Contact Me
+
             </a>
+
           </div>
 
-          <div class="hero-socials">
+
+          <!-- =========================
+               SOCIAL LINKS
+          ========================== -->
+
+          <div class="hero-socials" aria-label="Social media links">
+
+
+            <!-- GitHub -->
+
             <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer"
-              class="footer-social-link" aria-label="GitHub profile">
+              class="footer-social-link" aria-label="Visit my GitHub profile">
+
               <i class="fa-brands fa-github" aria-hidden="true"></i>
+
             </a>
-            <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+
+
+            <!-- Telegram -->
+
+            <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer"
+              aria-label="Contact me on Telegram">
+
               <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+
             </a>
-            <a href="mailto:saemsromem@gmail.com" aria-label="Email">
+
+
+            <!-- Email -->
+
+            <a href="mailto:saemsromem@gmail.com" aria-label="Send me an email">
+
               <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
             </a>
+
           </div>
+
         </div>
+
+
+        <!-- =========================
+             PROFILE IMAGE
+        ========================== -->
 
         <div class="hero-image-wrap reveal">
+
           <div class="hero-image-frame">
-            <img src="assets/images/profile.jpg" alt="Portrait of Sa Em Sromem" class="hero-image" />
+
+            <img src="assets/images/profile.jpg" alt="Sa Em Sromem, IT and Web Programming student" class="hero-image"
+              width="500" height="500" loading="eager" />
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =================================================
+         QUICK INTRO SECTION
+    ================================================== -->
+
+    <section class="section container reveal" aria-labelledby="intro-title">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          What I Do
+        </p>
+
+        <h2 id="intro-title">
+          Learning. Building. Improving.
+        </h2>
+
+        <p>
+          I believe every project is an opportunity to learn something new
+          and become a better developer.
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <!-- Learning -->
+
+        <article class="card">
+
+          <div class="skill-icon">
+
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+
+          </div>
+
+          <h3>
+            Learning
+          </h3>
+
+          <p>
+            Building a strong foundation in web programming,
+            programming concepts and development tools.
+          </p>
+
+        </article>
+
+
+        <!-- Building -->
+
+        <article class="card">
+
+          <div class="skill-icon">
+
+            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+
+          </div>
+
+          <h3>
+            Building
+          </h3>
+
+          <p>
+            Creating websites and small projects to turn
+            what I learn into practical experience.
+          </p>
+
+        </article>
+
+
+        <!-- Improving -->
+
+        <article class="card">
+
+          <div class="skill-icon">
+
+            <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+
+          </div>
+
+          <h3>
+            Improving
+          </h3>
+
+          <p>
+            Continuously improving my coding, design,
+            problem-solving and development skills.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CALL TO ACTION
+    ================================================== -->
+
+    <section class="section container reveal" aria-labelledby="cta-title">
+
+      <div class="card">
+
+        <p class="eyebrow">
+          Let's work together
+        </p>
+
+        <h2 id="cta-title">
+          Have an idea or want to connect?
+        </h2>
+
+        <p>
+          I'm always interested in learning, collaborating
+          and connecting with people in technology.
+        </p>
+
+        <a href="pages/contact.html" class="btn btn-primary">
+
+          <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+
+          Get In Touch
+
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <!-- ================= FOOTER ================= -->
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
   <footer class="footer">
+
     <div class="container">
+
+
+      <!-- =========================
+           FOOTER BRAND
+      ========================== -->
+
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo"><span class="bracket">&lt;</span>SaEm<span
-            class="bracket">/&gt;</span></a>
-        <p>First-Year IT Student &amp; Aspiring Web Developer</p>
+
+        <a href="index.html" class="nav-logo" aria-label="Sa Em Sromem Home">
+
+          <span class="bracket">
+            &lt;
+          </span>
+
+          SaEm
+
+          <span class="bracket">
+            /&gt;
+          </span>
+
+        </a>
+
+
+        <p>
+          First-Year IT Student
+          &amp;
+          Aspiring Web Developer
+        </p>
+
       </div>
+
+
+      <!-- =========================
+           FOOTER LINKS
+      ========================== -->
 
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pages/about.html">About</a></li>
-        <li><a href="pages/projects.html">Projects</a></li>
-        <li><a href="pages/resume.html">Resume</a></li>
-        <li><a href="pages/contact.html">Contact</a></li>
+
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="pages/about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="pages/projects.html">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="pages/resume.html">
+            Resume
+          </a>
+        </li>
+
+        <li>
+          <a href="pages/contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
 
-      <div class="footer-social">
-        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
-            class="fa-brands fa-github" aria-hidden="true"></i></a>
-        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i
-            class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-        <a href="mailto:saemsromem@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"
-            aria-hidden="true"></i></a>
+
+      <!-- =========================
+           SOCIAL LINKS
+      ========================== -->
+
+      <div class="footer-social" aria-label="Social media links">
+
+        <a href="https://github.com/saemsromem-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+
+        </a>
+
+
+        <a href="https://t.me/Em_Programming" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+
+        </a>
+
+
+        <a href="mailto:saemsromem@gmail.com" aria-label="Email">
+
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+
+        </a>
+
       </div>
+
     </div>
-    <p class="footer-bottom">&copy; <span data-current-year></span> Sa Em Sromem. Built while learning, one commit at a
-      time.</p>
+
+
+    <!-- =========================
+         COPYRIGHT
+    ========================== -->
+
+    <p class="footer-bottom">
+
+      &copy;
+
+      <span data-current-year></span>
+
+      Sa Em Sromem.
+
+      Built while learning,
+      one commit at a time.
+
+    </p>
+
   </footer>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script src="js/script.js"></script>
+
 </body>
 
 </html>
-<p>Portfolio update</p>

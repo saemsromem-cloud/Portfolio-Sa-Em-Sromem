@@ -1,33 +1,64 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import (
+    Flask,
+    render_template,
+    request,
+    redirect,
+    url_for,
+    session,
+    flash,
+    send_from_directory
+)
+from werkzeug.security import check_password_hash
+from datetime import datetime
 import sqlite3
 import os
 
-app = Flask(__name__)
 
-# =========================
-# FLASK CONFIGURATION
-# =========================
-
-app.secret_key = "sa-em-sromem-change-this-secret-key"
-
-# =========================
-# DATABASE
-# =========================
+# ============================================================
+# 1. PROJECT CONFIGURATION
+# ============================================================
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(BASE_DIR)
+
+app = Flask(
+    __name__,
+    template_folder=PROJECT_DIR
+)
+
+# IMPORTANT:
+# Set SECRET_KEY as an environment variable in production.
+app.secret_key = os.environ.get(
+    "SECRET_KEY",
+    "dev-secret-key-change-this"
+)
+
+# Session security
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+    SESSION_COOKIE_SECURE=False,  # Change to True when using HTTPS
+)
+
 DATABASE = os.path.join(BASE_DIR, "messages.db")
 
 
+# ============================================================
+# 2. DATABASE
+# ============================================================
+
 def get_db():
-    conn = sqlite3.connect(DATABASE)
-    conn.row_factory = sqlite3.Row
-    return conn
+    """Create and return a SQLite database connection."""
+    connection = sqlite3.connect(DATABASE)
+    connection.row_factory = sqlite3.Row
+    return connection
 
 
 def init_db():
-    conn = get_db()
+    """Create the messages table if it doesn't exist."""
+    connection = get_db()
 
-    conn.execute("""
+    connection.execute("""
         CREATE TABLE IF NOT EXISTS messages (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
@@ -35,133 +66,302 @@ def init_db():
             subject TEXT NOT NULL,
             message TEXT NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            status TEXT DEFAULT 'Unread'
+            status TEXT NOT NULL DEFAULT 'Unread'
         )
     """)
 
-    conn.commit()
-    conn.close()
+    connection.commit()
+    connection.close()
 
 
-# =========================
-# CONTACT PAGE
-# =========================
+# ============================================================
+# 3. HELPER FUNCTIONS
+# ============================================================
+
+def is_admin_logged_in():
+    """Check whether the admin is logged in."""
+    return session.get("admin_logged_in", False)
+
+
+def validate_contact_form(name, email, subject, message):
+    """Validate contact form fields."""
+
+    errors = []
+
+    if len(name) < 2:
+        errors.append("Name must contain at least 2 characters.")
+
+    if "@" not in email or "." not in email:
+        errors.append("Please enter a valid email address.")
+
+    if len(subject) < 3:
+        errors.append("Subject must contain at least 3 characters.")
+
+    if len(message) < 10:
+        errors.append("Message must contain at least 10 characters.")
+
+    return errors
+
+
+# ============================================================
+# 4. HOME PAGE
+# ============================================================
+
+@app.route("/")
+def home():
+    """Display the portfolio home page."""
+    return render_template("index.html")
+
+
+# ============================================================
+# 5. PORTFOLIO PAGES
+# ============================================================
+
+@app.route("/about")
+def about():
+    return render_template("pages/about.html")
+
+
+@app.route("/projects")
+def projects():
+    return render_template("pages/projects.html")
+
+
+@app.route("/resume")
+def resume():
+    return render_template("pages/resume.html")
+
+
+# ============================================================
+# 6. SERVE CSS
+# ============================================================
+
+@app.route("/css/<path:filename>")
+def serve_css(filename):
+    return send_from_directory(
+        os.path.join(PROJECT_DIR, "css"),
+        filename
+    )
+
+
+# ============================================================
+# 7. SERVE JAVASCRIPT
+# ============================================================
+
+@app.route("/js/<path:filename>")
+def serve_js(filename):
+    return send_from_directory(
+        os.path.join(PROJECT_DIR, "js"),
+        filename
+    )
+
+
+# ============================================================
+# 8. SERVE ASSETS
+# ============================================================
+
+@app.route("/assets/<path:filename>")
+def serve_assets(filename):
+    return send_from_directory(
+        os.path.join(PROJECT_DIR, "assets"),
+        filename
+    )
+
+
+# ============================================================
+# 9. CONTACT PAGE
+# ============================================================
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
 
     if request.method == "POST":
 
+        # Get form data
         name = request.form.get("name", "").strip()
         email = request.form.get("email", "").strip()
         subject = request.form.get("subject", "").strip()
         message = request.form.get("message", "").strip()
 
-        # Basic validation
-        if not name or not email or not subject or not message:
-            return render_template(
-                "contact.html",
-                error="Please fill in all fields."
-            )
-
-        conn = get_db()
-
-        conn.execute("""
-            INSERT INTO messages
-            (name, email, subject, message)
-            VALUES (?, ?, ?, ?)
-        """, (
+        # Validate form
+        errors = validate_contact_form(
             name,
             email,
             subject,
             message
-        ))
-
-        conn.commit()
-        conn.close()
-
-        return render_template(
-            "contact.html",
-            success="Your message has been sent successfully!"
         )
 
-    return render_template("contact.html")
+        if errors:
+            return render_template(
+                "pages/contact.html",
+                errors=errors,
+                name=name,
+                email=email,
+                subject=subject,
+                message=message
+            )
+
+        try:
+            connection = get_db()
+
+            connection.execute(
+                """
+                INSERT INTO messages
+                (name, email, subject, message, status)
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (
+                    name,
+                    email,
+                    subject,
+                    message,
+                    "Unread"
+                )
+            )
+
+            connection.commit()
+            connection.close()
+
+            flash(
+                "Your message has been sent successfully!",
+                "success"
+            )
+
+            return redirect(url_for("contact"))
+
+        except sqlite3.Error:
+            flash(
+                "Something went wrong. Please try again later.",
+                "error"
+            )
+
+            return redirect(url_for("contact"))
+
+    return render_template("pages/contact.html")
 
 
-# =========================
-# ADMIN LOGIN
-# =========================
+# ============================================================
+# 10. ADMIN LOGIN
+# ============================================================
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
+    # If already logged in, go directly to dashboard
+    if is_admin_logged_in():
+        return redirect(url_for("dashboard"))
+
     if request.method == "POST":
 
-        username = request.form.get("username", "").strip()
-        password = request.form.get("password", "")
+        username = request.form.get(
+            "username",
+            ""
+        ).strip()
 
-        # CHANGE THESE
-        ADMIN_USERNAME = "admin"
-        ADMIN_PASSWORD = "123456"
-
-        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
-
-            session["admin_logged_in"] = True
-
-            return redirect(url_for("dashboard"))
-
-        return render_template(
-            "login.html",
-            error="Invalid username or password."
+        password = request.form.get(
+            "password",
+            ""
         )
 
-    return render_template("login.html")
+        # Username can come from environment variable
+        admin_username = os.environ.get(
+            "ADMIN_USERNAME",
+            "admin"
+        )
+
+        # Password should be stored as a HASH
+        admin_password_hash = os.environ.get(
+            "ADMIN_PASSWORD_HASH"
+        )
+
+        # Development fallback
+        #
+        # For real deployment, create an environment variable
+        # called ADMIN_PASSWORD_HASH.
+        if not admin_password_hash:
+            admin_password_hash = (
+                "scrypt:32768:8:1$"
+                "demo$"
+                "replace-this-password-hash"
+            )
+
+        # Check login
+        if (
+            username == admin_username
+            and check_password_hash(
+                admin_password_hash,
+                password
+            )
+        ):
+            session.clear()
+            session["admin_logged_in"] = True
+
+            return redirect(
+                url_for("dashboard")
+            )
+
+        flash(
+            "Invalid username or password.",
+            "error"
+        )
+
+    return render_template(
+        "admin/login.html"
+    )
 
 
-# =========================
-# ADMIN DASHBOARD
-# =========================
+# ============================================================
+# 11. ADMIN DASHBOARD
+# ============================================================
 
 @app.route("/dashboard")
 def dashboard():
 
     # Protect dashboard
-    if not session.get("admin_logged_in"):
-        return redirect(url_for("login"))
+    if not is_admin_logged_in():
+        return redirect(
+            url_for("login")
+        )
 
-    conn = get_db()
+    connection = get_db()
 
     # Get all messages
-    messages = conn.execute("""
+    messages = connection.execute(
+        """
         SELECT *
         FROM messages
         ORDER BY id DESC
-    """).fetchall()
+        """
+    ).fetchall()
 
-    # Total messages
-    total_messages = conn.execute("""
+    # Get message statistics
+    total_messages = connection.execute(
+        """
         SELECT COUNT(*)
         FROM messages
-    """).fetchone()[0]
+        """
+    ).fetchone()[0]
 
-    # Unread messages
-    unread_messages = conn.execute("""
+    unread_messages = connection.execute(
+        """
         SELECT COUNT(*)
         FROM messages
         WHERE status = 'Unread'
-    """).fetchone()[0]
+        """
+    ).fetchone()[0]
 
-    # Read messages
-    read_messages = conn.execute("""
+    read_messages = connection.execute(
+        """
         SELECT COUNT(*)
         FROM messages
         WHERE status = 'Read'
-    """).fetchone()[0]
+        """
+    ).fetchone()[0]
 
-    conn.close()
+    connection.close()
 
     return render_template(
-        "dashboard.html",
+        "admin/dashboard.html",
         messages=messages,
         total_messages=total_messages,
         unread_messages=unread_messages,
@@ -169,74 +369,138 @@ def dashboard():
     )
 
 
-# =========================
-# MARK AS READ
-# =========================
+# ============================================================
+# 12. MARK MESSAGE AS READ
+# ============================================================
 
-@app.route("/message/read/<int:message_id>")
+@app.route(
+    "/message/read/<int:message_id>",
+    methods=["POST"]
+)
 def mark_as_read(message_id):
 
-    if not session.get("admin_logged_in"):
-        return redirect(url_for("login"))
+    if not is_admin_logged_in():
+        return redirect(
+            url_for("login")
+        )
 
-    conn = get_db()
+    connection = get_db()
 
-    conn.execute("""
+    connection.execute(
+        """
         UPDATE messages
         SET status = 'Read'
         WHERE id = ?
-    """, (message_id,))
+        """,
+        (message_id,)
+    )
 
-    conn.commit()
-    conn.close()
+    connection.commit()
+    connection.close()
 
-    return redirect(url_for("dashboard"))
+    flash(
+        "Message marked as read.",
+        "success"
+    )
+
+    return redirect(
+        url_for("dashboard")
+    )
 
 
-# =========================
-# DELETE MESSAGE
-# =========================
+# ============================================================
+# 13. DELETE MESSAGE
+# ============================================================
 
-@app.route("/message/delete/<int:message_id>")
+@app.route(
+    "/message/delete/<int:message_id>",
+    methods=["POST"]
+)
 def delete_message(message_id):
 
-    if not session.get("admin_logged_in"):
-        return redirect(url_for("login"))
+    if not is_admin_logged_in():
+        return redirect(
+            url_for("login")
+        )
 
-    conn = get_db()
+    connection = get_db()
 
-    conn.execute("""
+    connection.execute(
+        """
         DELETE FROM messages
         WHERE id = ?
-    """, (message_id,))
+        """,
+        (message_id,)
+    )
 
-    conn.commit()
-    conn.close()
+    connection.commit()
+    connection.close()
 
-    return redirect(url_for("dashboard"))
+    flash(
+        "Message deleted successfully.",
+        "success"
+    )
+
+    return redirect(
+        url_for("dashboard")
+    )
 
 
-# =========================
-# LOGOUT
-# =========================
+# ============================================================
+# 14. LOGOUT
+# ============================================================
 
 @app.route("/logout")
 def logout():
 
     session.clear()
 
-    return redirect(url_for("login"))
+    flash(
+        "You have been logged out.",
+        "success"
+    )
+
+    return redirect(
+        url_for("login")
+    )
 
 
-# =========================
-# START SERVER
-# =========================
+# ============================================================
+# 15. ERROR HANDLERS
+# ============================================================
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template(
+        "404.html"
+    ), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template(
+        "500.html"
+    ), 500
+
+
+# ============================================================
+# 16. START APPLICATION
+# ============================================================
+
+init_db()
+
 
 if __name__ == "__main__":
 
-    init_db()
+    print("=" * 50)
+    print("Sa Em Sromem Portfolio")
+    print("=" * 50)
+    print("Database: Ready")
+    print("Server: http://127.0.0.1:5000")
+    print("=" * 50)
 
-    print("Database initialized.")
-    print("Server running at http://127.0.0.1:5000")
-
-    app.run(debug=True)
+    app.run(
+        debug=True,
+        host="127.0.0.1",
+        port=5000
+    )

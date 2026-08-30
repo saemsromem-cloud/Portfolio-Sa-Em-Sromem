@@ -2,136 +2,628 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Admin Login — Sa Em Sromem</title>
 
+    <meta name="description" content="Secure admin login for Sa Em Sromem portfolio dashboard.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
-        * {
-            box-sizing: border-box;
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+
+            --bg: #f8fafc;
+            --surface: #ffffff;
+
+            --text: #0f172a;
+            --text-muted: #64748b;
+
+            --border: #e2e8f0;
+
+            --danger-bg: #fef2f2;
+            --danger-text: #dc2626;
+            --danger-border: #fecaca;
+
+            --shadow:
+                0 20px 50px rgba(15, 23, 42, 0.12);
+
+            --radius: 18px;
+
+            --font-display:
+                "Space Grotesk",
+                "Segoe UI",
+                sans-serif;
+
+            --font-body:
+                "Inter",
+                "Segoe UI",
+                sans-serif;
+
+            --font-mono:
+                "JetBrains Mono",
+                monospace;
         }
 
-        body {
-            margin: 0;
 
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
             min-height: 100vh;
 
             display: flex;
-
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
-            font-family: Arial, sans-serif;
+            padding: 24px;
 
-            background: #f4f6f8;
+            font-family: var(--font-body);
+
+            color: var(--text);
+
+            background:
+                radial-gradient(circle at top left,
+                    rgba(37, 99, 235, 0.12),
+                    transparent 35%),
+                radial-gradient(circle at bottom right,
+                    rgba(37, 99, 235, 0.08),
+                    transparent 35%),
+                var(--bg);
+
+            -webkit-font-smoothing: antialiased;
         }
 
-        .login-box {
-            width: 360px;
 
-            background: white;
+        /* =========================================================
+           LOGIN CONTAINER
+        ========================================================= */
 
-            padding: 35px;
-
-            border-radius: 14px;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.1);
+        .login-wrapper {
+            width: 100%;
+            max-width: 430px;
         }
 
-        .login-box h1 {
+
+        /* =========================================================
+           BRAND
+        ========================================================= */
+
+        .brand {
             text-align: center;
+
+            margin-bottom: 24px;
+        }
+
+
+        .brand-logo {
+            display: inline-block;
+
+            font-family: var(--font-mono);
+
+            font-size: 1.25rem;
+
+            font-weight: 600;
+
+            color: var(--text);
+
+            text-decoration: none;
+        }
+
+
+        .brand-logo .bracket {
+            color: var(--primary);
+        }
+
+
+        .brand p {
+            margin-top: 8px;
+
+            color: var(--text-muted);
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           LOGIN CARD
+        ========================================================= */
+
+        .login-card {
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            padding: 38px;
+
+            box-shadow: var(--shadow);
+
+            animation: card-entry 0.6s ease both;
+        }
+
+
+        @keyframes card-entry {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================================
+           LOGIN HEADER
+        ========================================================= */
+
+        .login-header {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .login-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 18px;
+
+            border-radius: 16px;
+
+            color: var(--primary);
+
+            background: rgba(37, 99, 235, 0.1);
+
+            font-size: 1.4rem;
+        }
+
+
+        .login-header h1 {
+            font-family: var(--font-display);
+
+            font-size: clamp(1.7rem, 4vw, 2rem);
+
+            line-height: 1.2;
 
             margin-bottom: 8px;
         }
 
-        .login-box p.subtitle {
-            text-align: center;
 
-            color: #777;
+        .login-header p {
+            color: var(--text-muted);
 
-            margin-bottom: 25px;
+            font-size: 0.9rem;
+
+            line-height: 1.6;
         }
+
+
+        /* =========================================================
+           ERROR MESSAGE
+        ========================================================= */
+
+        .error {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+
+            padding: 12px 14px;
+
+            border: 1px solid var(--danger-border);
+
+            border-radius: 10px;
+
+            background: var(--danger-bg);
+
+            color: var(--danger-text);
+
+            font-size: 0.88rem;
+
+            line-height: 1.5;
+        }
+
+
+        .error i {
+            margin-top: 3px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================================
+           FORM
+        ========================================================= */
+
+        .login-form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
 
         .form-group {
-            margin-bottom: 18px;
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
         }
 
-        label {
-            display: block;
 
-            margin-bottom: 7px;
+        .form-label {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            font-size: 0.9rem;
 
             font-weight: 600;
         }
 
-        input {
-            width: 100%;
 
-            padding: 12px;
-
-            border: 1px solid #ddd;
-
-            border-radius: 7px;
-
-            font-size: 15px;
+        .form-label span {
+            color: var(--text);
         }
 
-        input:focus {
+
+        .input-wrapper {
+            position: relative;
+        }
+
+
+        .input-icon {
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: var(--text-muted);
+
+            pointer-events: none;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .input-wrapper input {
+            width: 100%;
+
+            min-height: 50px;
+
+            padding:
+                0.8rem 2.9rem 0.8rem 2.9rem;
+
+            border: 1.5px solid var(--border);
+
+            border-radius: 10px;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            font-family: var(--font-body);
+
+            font-size: 0.95rem;
+
             outline: none;
 
-            border-color: #111;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
         }
 
-        button {
+
+        .input-wrapper input::placeholder {
+            color: #94a3b8;
+        }
+
+
+        .input-wrapper input:hover {
+            border-color: #cbd5e1;
+        }
+
+
+        .input-wrapper input:focus {
+            border-color: var(--primary);
+
+            background: var(--surface);
+
+            box-shadow:
+                0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+
+        .input-wrapper input:focus+.input-action,
+        .input-wrapper:focus-within .input-icon {
+            color: var(--primary);
+        }
+
+
+        /* =========================================================
+           PASSWORD TOGGLE
+        ========================================================= */
+
+        .input-action {
+            position: absolute;
+
+            right: 12px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 8px;
+
+            color: var(--text-muted);
+
+            background: transparent;
+
+            cursor: pointer;
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+
+        .input-action:hover {
+            color: var(--text);
+
+            background: var(--border);
+        }
+
+
+        /* =========================================================
+           LOGIN BUTTON
+        ========================================================= */
+
+        .login-button {
             width: 100%;
 
-            padding: 12px;
+            min-height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 4px;
 
             border: none;
 
-            border-radius: 7px;
+            border-radius: 10px;
 
-            background: #111;
+            background: var(--primary);
 
             color: white;
 
-            font-size: 15px;
+            font-family: var(--font-body);
+
+            font-size: 0.95rem;
+
+            font-weight: 600;
 
             cursor: pointer;
+
+            box-shadow:
+                0 6px 16px rgba(37, 99, 235, 0.2);
+
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
-        button:hover {
-            background: #333;
+
+        .login-button:hover {
+            background: var(--primary-dark);
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 22px rgba(37, 99, 235, 0.25);
         }
 
-        .error {
-            background: #ffe5e5;
 
-            color: #d00;
-
-            padding: 10px;
-
-            border-radius: 6px;
-
-            text-align: center;
-
-            margin-bottom: 15px;
+        .login-button:active {
+            transform: translateY(0);
         }
 
-        .back {
-            display: block;
 
+        /* =========================================================
+           SECURITY NOTE
+        ========================================================= */
+
+        .security-note {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 18px;
+
+            color: var(--text-muted);
+
+            font-size: 0.78rem;
+        }
+
+
+        .security-note i {
+            color: #16a34a;
+        }
+
+
+        /* =========================================================
+           BACK LINK
+        ========================================================= */
+
+        .back-link {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            margin-top: 24px;
+
+            color: var(--text-muted);
+
+            font-size: 0.88rem;
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease,
+                gap 0.2s ease;
+        }
+
+
+        .back-link:hover {
+            color: var(--primary);
+
+            gap: 10px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .login-footer {
             text-align: center;
 
             margin-top: 20px;
 
-            color: #555;
+            color: var(--text-muted);
 
-            text-decoration: none;
+            font-size: 0.75rem;
+        }
+
+
+        .login-footer span {
+            font-family: var(--font-mono);
+        }
+
+
+        /* =========================================================
+           FOCUS ACCESSIBILITY
+        ========================================================= */
+
+        :focus-visible {
+            outline: 2px solid var(--primary);
+
+            outline-offset: 3px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 16px;
+            }
+
+
+            .login-card {
+                padding: 28px 22px;
+            }
+
+
+            .brand {
+                margin-bottom: 18px;
+            }
+
+
+            .login-header {
+                margin-bottom: 24px;
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
+
         }
     </style>
 
@@ -140,62 +632,246 @@
 
 <body>
 
-    <div class="login-box">
+    <main class="login-wrapper">
 
-        <h1>
-            Admin Login
-        </h1>
+        <!-- =====================================================
+             BRAND
+        ====================================================== -->
 
-        <p class="subtitle">
-            Sa Em Sromem Portfolio
-        </p>
+        <div class="brand">
 
+            <a href="/" class="brand-logo">
+                <span class="bracket">&lt;</span>SaEm<span class="bracket">/&gt;</span>
+            </a>
 
-        {% if error %}
+            <p>Portfolio Administration</p>
 
-        <div class="error">
-            {{ error }}
         </div>
 
-        {% endif %}
 
+        <!-- =====================================================
+             LOGIN CARD
+        ====================================================== -->
 
-        <form action="/login" method="POST">
+        <section class="login-card">
 
-            <div class="form-group">
+            <!-- Header -->
 
-                <label for="username">
-                    Username
-                </label>
+            <div class="login-header">
 
-                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <div class="login-icon">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                </div>
 
-            </div>
+                <h1>Welcome Back</h1>
 
-
-            <div class="form-group">
-
-                <label for="password">
-                    Password
-                </label>
-
-                <input type="password" id="password" name="password" placeholder="Enter password" required>
+                <p>
+                    Sign in to access your portfolio dashboard
+                    and manage messages.
+                </p>
 
             </div>
 
 
-            <button type="submit">
-                Login
-            </button>
+            <!-- =================================================
+                 ERROR MESSAGE
+            ================================================== -->
 
-        </form>
+            {% if error %}
+
+            <div class="error" role="alert">
+
+                <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+
+                <span>{{ error }}</span>
+
+            </div>
+
+            {% endif %}
 
 
-        <a href="/contact" class="back">
-            ← Back to Contact
-        </a>
+            <!-- =================================================
+                 LOGIN FORM
+            ================================================== -->
 
-    </div>
+            <form action="{{ url_for('login') }}" method="POST" class="login-form" autocomplete="on">
+
+                <!-- Username -->
+
+                <div class="form-group">
+
+                    <label for="username" class="form-label">
+                        <span>Username</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-regular fa-user input-icon" aria-hidden="true"></i>
+
+                        <input type="text" id="username" name="username" placeholder="Enter your username"
+                            autocomplete="username" required autofocus>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password" class="form-label">
+                        <span>Password</span>
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-lock input-icon" aria-hidden="true"></i>
+
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                            autocomplete="current-password" required>
+
+                        <button type="button" class="input-action" id="toggle-password" aria-label="Show password"
+                            aria-pressed="false">
+                            <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Login -->
+
+                <button type="submit" class="login-button">
+
+                    <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+
+                    <span>Sign In</span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Security -->
+
+            <div class="security-note">
+
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+
+                <span>Secure administrator area</span>
+
+            </div>
+
+
+            <!-- Back -->
+
+            <a href="/contact" class="back-link">
+
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+
+                <span>Back to Contact</span>
+
+            </a>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <div class="login-footer">
+
+            &copy; <span id="current-year"></span>
+            Sa Em Sromem
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /* -------------------------------------------------------
+           SHOW / HIDE PASSWORD
+        ------------------------------------------------------- */
+
+        const passwordInput =
+            document.getElementById("password");
+
+        const togglePassword =
+            document.getElementById("toggle-password");
+
+
+        if (passwordInput && togglePassword) {
+
+            togglePassword.addEventListener(
+                "click",
+                function () {
+
+                    const isPassword =
+                        passwordInput.type === "password";
+
+                    passwordInput.type =
+                        isPassword ? "text" : "password";
+
+
+                    togglePassword.setAttribute(
+                        "aria-pressed",
+                        isPassword
+                    );
+
+
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        isPassword
+                            ? "Hide password"
+                            : "Show password"
+                    );
+
+
+                    const icon =
+                        togglePassword.querySelector("i");
+
+
+                    icon.classList.toggle(
+                        "fa-eye",
+                        !isPassword
+                    );
+
+                    icon.classList.toggle(
+                        "fa-eye-slash",
+                        isPassword
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* -------------------------------------------------------
+           CURRENT YEAR
+        ------------------------------------------------------- */
+
+        const yearElement =
+            document.getElementById("current-year");
+
+
+        if (yearElement) {
+
+            yearElement.textContent =
+                new Date().getFullYear();
+
+        }
+
+    </script>
 
 </body>
 
